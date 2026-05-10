@@ -4,77 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Peiqi Tang – Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Rock+Salt&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="top">
-  <nav class="nav">
-    <a href="#" class="nav__name">Peiqi Tang</a>
-    <div class="nav__links">
-      <a href="#projects" class="nav__link">Projects</a>
-      <a href="#about" class="nav__link">About</a>
-    </div>
-  </nav>
+  <main class="home">
+    <header class="hero">
+      <h1 class="site-title">Peiqi Tang</h1>
 
-  <main>
-    <section id="about" class="intro">
-      <h1 class="intro__title">Hello, I'm Peiqi.</h1>
-      <p class="intro__bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-    </section>
-
-    <section id="projects" class="projects">
-      <h2 class="projects__title">Featured Projects</h2>
-      <div class="projects__grid">
-        <article class="card">
-          <div class="card__image" aria-hidden="true"></div>
-          <h3 class="card__title">Lorem ipsum dolor</h3>
-          <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</p>
-        </article>
-        <article class="card">
-          <div class="card__image" aria-hidden="true"></div>
-          <h3 class="card__title">Consectetur adipiscing</h3>
-          <p class="card__description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-        </article>
-        <article class="card">
-          <div class="card__image" aria-hidden="true"></div>
-          <h3 class="card__title">Sed do eiusmod</h3>
-          <p class="card__description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
-        </article>
-        <article class="card">
-          <div class="card__image" aria-hidden="true"></div>
-          <h3 class="card__title">Tempor incididunt</h3>
-          <p class="card__description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-        </article>
-        <article class="card">
-          <div class="card__image" aria-hidden="true"></div>
-          <h3 class="card__title">Ut labore et dolore</h3>
-          <p class="card__description">Magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-        </article>
-        <article class="card">
-          <div class="card__image" aria-hidden="true"></div>
-          <h3 class="card__title">Quis nostrud</h3>
-          <p class="card__description">Laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="work-contact">
-      <div class="work-contact__experience">
-        <h2 class="work-contact__title">Work Experience</h2>
-        <ul class="work-contact__list">
-          <li><strong>Company Name</strong> – Role, Dates. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li><strong>Company Name</strong> – Role, Dates. Sed do eiusmod tempor incididunt ut labore et dolore.</li>
-          <li><strong>Company Name</strong> – Role, Dates. Ut enim ad minim veniam, quis nostrud exercitation.</li>
-        </ul>
-      </div>
-      <div class="work-contact__contact">
-        <h2 class="work-contact__title">Contact</h2>
-        <p>
-          <a href="mailto:email@example.com" class="work-contact__link">email@example.com</a>
-          <br>
-          <a href="https://linkedin.com/in/example" target="_blank" rel="noopener noreferrer" class="work-contact__link">LinkedIn</a>
+      <section class="intro" aria-labelledby="intro-title">
+        <h2 id="intro-title" class="intro__headline">Designer with 14yrs of experience creating interactions and interfaces that bridges the gap between our digital and physical world.</h2>
+        <p class="intro__bio">
+          Recently at Meta Reality Labs Research working on future experiences for
+          <a href="https://tech.facebook.com/reality-labs/2021/3/inside-facebook-reality-labs-wrist-based-interaction-for-the-next-computing-platform/" target="_blank" rel="noopener noreferrer">AI wearables</a>
+          with advanced sensors beyond microphones and cameras. Previously led the design of visual search on the Amazon Shopping app (now called
+          <a href="https://www.aboutamazon.com/news/retail/search-image-amazon-lens-live-shopping-rufus" target="_blank" rel="noopener noreferrer">Lens</a>)
+          where I helped launch multiple generations of the product.
         </p>
+        <div class="intro__actions" aria-label="Profile links">
+          <a class="button" href="#" aria-label="Open resume">Resume</a>
+          <a class="button" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">Reach out via LinkedIn</a>
+        </div>
+      </section>
+    </header>
+
+    <section id="projects" class="projects" aria-label="Projects">
+      <div class="projects__grid">
+        <a class="project-card project-card--babycare" href="#" aria-label="BabyCare: A Wearable Agent">
+          <div class="project-card__text">
+            <h2>BabyCare: A Wearable Agent</h2>
+            <p>Prototyped an AI agent using the Ray-Ban Meta glasses to enable parents of newborns to easily log essential baby activities like diaper changes &amp; sleep schedules, without pulling out the phone from the pocket.</p>
+            <p>This experiment shows a path towards a world where job-oriented agents could replace apps on the next computing platform.</p>
+          </div>
+          <div class="project-card__visual project-card__visual--placeholder" aria-hidden="true"></div>
+        </a>
+
+        <article class="project-card project-card--agents">
+          <div class="project-card__text">
+            <h2>OS for Agents</h2>
+            <p>A short article summarizing my thoughts about a new relationship model between users, OS and agents on wearables - one that is different from what we have with apps on the current computing platform.</p>
+            <p>I hope to spark more conversations as a new generation of wearables comes up in the next few years.</p>
+          </div>
+          <div class="project-card__visual project-card__visual--placeholder" aria-hidden="true"></div>
+        </article>
+
+        <article class="project-card project-card--gen-ui">
+          <div class="project-card__text">
+            <h2>Gen UI</h2>
+            <p>For the first time we have a promising solution for personalizing the UI for a long tail of scenarios thanks to AI's ability to generate UI on-the-go.</p>
+            <p>I chose to focus on a smaller screen to strike the balance between personalization and predictability.</p>
+          </div>
+          <div class="project-card__visual project-card__visual--placeholder" aria-hidden="true"></div>
+        </article>
+
+        <article class="project-card project-card--meta">
+          <div class="project-card__text">
+            <h2>Projects at Meta</h2>
+            <p>Created proactive agent experiences on a two-part AI wearable constellation.</p>
+            <p>Established new shell models for future AR devices that handle nondeterministic input and output during human x AI interactions.</p>
+          </div>
+          <div class="project-card__visual project-card__visual--placeholder" aria-hidden="true"></div>
+        </article>
+
+        <article class="project-card project-card--fireflies">
+          <div class="project-card__text">
+            <h2>Fireflies, A Visual Language for Visual Search</h2>
+            <p>My attempt to communicate more system and model states subtly and intuitively to users at the time when nondeterministic outputs are still novel.</p>
+          </div>
+          <div class="project-card__visual project-card__visual--placeholder" aria-hidden="true"></div>
+        </article>
+
+        <article class="project-card project-card--lens">
+          <div class="project-card__text">
+            <h2>Amazon Lens</h2>
+            <p>A brief walk through of multiple generations of the product experience during my time there, and the reason behind the key pivot in each generation.</p>
+          </div>
+          <div class="project-card__visual project-card__visual--placeholder" aria-hidden="true"></div>
+        </article>
       </div>
     </section>
+
+    <a class="button back-to-top" href="#top">Back to top</a>
   </main>
 </body>
 </html>
