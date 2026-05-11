@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>BabyCare: A Wearable Agent – Peiqi Tang</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +22,14 @@
       <h1 class="project-title">BabyCare: A Wearable Agent</h1>
 
       <figure class="project-media project-media--opaque project-media--hero">
-        <img src="assets/BabyCare Video-Cover.jpg" alt="BabyCare video cover showing a parent feeding a newborn while wearing AI glasses.">
+        <iframe
+          id="babycare-video"
+          data-video-id="H8Iehch-T74"
+          data-video-token="jxYoSdTHy6B1y3wd"
+          title="BabyCare: A Wearable Agent video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
       </figure>
 
       <section class="project-section project-section--overview" aria-label="Overview">
@@ -91,5 +99,47 @@
       <a class="button back-to-top" href="#top">Back to top</a>
     </div>
   </main>
+  <script>
+    const babycareVideo = document.getElementById("babycare-video");
+    const babycareVideoId = babycareVideo.dataset.videoId;
+    const babycareVideoParams = new URLSearchParams({
+      si: babycareVideo.dataset.videoToken,
+      enablejsapi: "1",
+      mute: "1",
+      loop: "1",
+      playlist: babycareVideoId,
+      playsinline: "1",
+      rel: "0"
+    });
+
+    if (window.location.origin !== "null") {
+      babycareVideoParams.set("origin", window.location.origin);
+    }
+
+    babycareVideo.src = `https://www.youtube.com/embed/${babycareVideoId}?${babycareVideoParams.toString()}`;
+  </script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    let babycareVideoPlayer;
+
+    function onYouTubeIframeAPIReady() {
+      babycareVideoPlayer = new YT.Player("babycare-video", {
+        events: {
+          onReady: function (event) {
+            event.target.mute();
+            window.setTimeout(function () {
+              event.target.playVideo();
+            }, 3000);
+          },
+          onStateChange: function (event) {
+            if (event.data === YT.PlayerState.ENDED) {
+              event.target.seekTo(0);
+              event.target.playVideo();
+            }
+          }
+        }
+      });
+    }
+  </script>
 </body>
 </html>

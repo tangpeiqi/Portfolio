@@ -280,6 +280,13 @@ img {
   height: auto;
 }
 
+.project-media iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
 .bullet-block {
   display: flex;
   align-items: flex-start;
