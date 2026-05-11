@@ -262,7 +262,11 @@ img {
 }
 
 .project-media--opaque {
-  width: 100%;
+  width: calc(100% + 48px);
+  margin-right: -24px;
+  margin-left: -24px;
+  padding-right: 24px;
+  padding-left: 24px;
 }
 
 .project-media--transparent {
@@ -283,6 +287,8 @@ img {
 .project-media iframe {
   display: block;
   width: 100%;
+  max-width: none;
+  height: auto;
   aspect-ratio: 16 / 9;
   border: 0;
 }
@@ -417,6 +423,14 @@ img {
     width: calc(100% + 32px);
     margin-left: -16px;
     margin-right: -16px;
+  }
+
+  .project-media--opaque {
+    width: calc(100% + 32px);
+    margin-right: -16px;
+    margin-left: -16px;
+    padding-right: 16px;
+    padding-left: 16px;
   }
 
   .bullet-block {
