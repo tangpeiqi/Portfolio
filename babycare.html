@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BabyCare: A Wearable Agent – Peiqi Tang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Rock+Salt&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+  <header class="project-nav" aria-label="Portfolio navigation">
+    <div class="project-container">
+      <a class="project-nav__brand" href="index.html">Peiqi Tang</a>
+    </div>
+  </header>
+
+  <main class="project-page">
+    <div class="project-container">
+      <h1 class="project-title">BabyCare: A Wearable Agent</h1>
+
+      <figure class="project-media project-media--opaque project-media--hero">
+        <img src="assets/BabyCare Video-Cover.jpg" alt="BabyCare video cover showing a parent feeding a newborn while wearing AI glasses.">
+      </figure>
+
+      <section class="project-section project-section--overview" aria-label="Overview">
+        <div class="project-copy">
+          <p>Baby activity logging made easy with an agent created for your AI glasses.</p>
+          <p>I built a prototype agent that uses Ray-Ban Meta glasses to get context (image and audio) about the baby activity, then creates an activity timeline and shows insights on your mobile phone.</p>
+          <p>Traditionally: You would have to use a mobile app like Huckleberry, or What to Expect, to manually log everything into the app, from diaper change, poop color, sleep schedule to food consumption. You have to remind yourself to find time to log the activities afterwards. It creates cognitive pressure and takes precious time out of the already over-loaded new parents.</p>
+          <p>With this agent: You can just tap on the RBM to capture some context (a few images of what you are doing or a few words from you) and have the AI agent figure out what to note down, then organize the info into easily consumable data for you. It takes all the manual work out of your plate so you can focus on what actually matters - taking care of the new born.</p>
+        </div>
+
+        <a class="button" href="https://github.com/tangpeiqi/BabyCare" target="_blank" rel="noopener noreferrer">Go to GitHub Repo</a>
+      </section>
+
+      <section class="project-section" aria-labelledby="vision-title">
+        <h2 id="vision-title" class="project-section__title">Vision</h2>
+        <div class="bullet-block bullet-block--two">
+          <div class="bullet-point">
+            <h3>Get rid of apps</h3>
+            <p>I want to prove the idea that we can replace some, if not most of the apps we use today on a phone with agents on wearables. Let wearable agents be the fabrics to weave our physical and digital lives together.</p>
+          </div>
+          <div class="bullet-point">
+            <h3>Reduce friction of interaction</h3>
+            <p>This is a proof of life of a wearable agent experience that shows a path towards frictionless interaction when we have multimodal input plus context.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="flow-title">
+        <h2 id="flow-title" class="project-section__title">Experience Flow</h2>
+        <figure class="project-media project-media--transparent">
+          <img src="assets/Flow.png" alt="Five-step BabyCare experience flow from connecting glasses and phone through tapping, activity capture, cloud processing, and logged results.">
+        </figure>
+        <figure class="project-media project-media--opaque project-media--spaced">
+          <img src="assets/BabyCare UI.png" alt="Three BabyCare mobile app screens showing summary, activity timeline, and settings.">
+        </figure>
+      </section>
+
+      <section class="project-section" aria-labelledby="privacy-title">
+        <h2 id="privacy-title" class="project-section__title">Privacy considerations</h2>
+        <div class="bullet-block bullet-block--two">
+          <div class="bullet-point">
+            <h3>You are always in control</h3>
+            <p>Initiating and stopping the capture process is user-controlled with a simple tap. A single tap on the temple arm begins capturing, and a subsequent tap concludes the capture. If you accidentally started the session or if sensitive information is involved, you can always stop and discard it by tapping the cancel button on the phone. Data from that session won't be sent to the AI model.</p>
+          </div>
+          <div class="bullet-point">
+            <h3>Async catch up</h3>
+            <p>If you need to log an activity later, perhaps for a private moment or because you forgot to log it earlier, you can still tap the glasses and verbally provide an update. The audio inference will take over image inference and the agent will be able to log the activity based on what you told it instead of what it sees.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="next-title">
+        <h2 id="next-title" class="project-section__title">Next Steps: Revisit for future SDKs</h2>
+        <div class="project-copy">
+          <p>Currently the SDK (V0.6) doesn't expose the capture button on the glasses. Starting/stopping streaming and capturing a photo can only be done via a GUI button on the app. This creates extra friction for the beginning and the end of the experience because users have to touch the phone before controlling the glasses. Once the Meta wearable SDK opens up for more hardware interactions, I will come back to improve the interaction and reduce the friction to use this agent.</p>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="picture-title">
+        <h2 id="picture-title" class="project-section__title">A bigger picture</h2>
+        <div class="project-copy">
+          <p>I'm not a developer and this prototype took me and my AI partner a few weeks to build. However I can see a future where such agents could be built much simpler and faster. However niche my need is, there will be an agent perfect for the job.</p>
+          <p>Instead of apps, if we have multiple agents on our wearables in the future, how would they be organized differently than the world of apps we live in today? I wrote up a short article about the relationship between user, agent and OS. I hope it will spark more discussion on this topic.</p>
+        </div>
+      </section>
+
+      <a class="button back-to-top" href="#top">Back to top</a>
+    </div>
+  </main>
+</body>
+</html>
