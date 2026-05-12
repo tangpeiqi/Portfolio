@@ -257,6 +257,10 @@ img {
   letter-spacing: 0;
 }
 
+.project-copy strong {
+  font-weight: 700;
+}
+
 .project-copy p:last-child {
   margin-bottom: 24px;
 }
