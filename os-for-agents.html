@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OS for Agents - Peiqi Tang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Rock+Salt&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+  <header class="project-nav" aria-label="Portfolio navigation">
+    <div class="project-container">
+      <a class="project-nav__brand" href="index.html">Peiqi Tang</a>
+    </div>
+  </header>
+
+  <main class="project-page">
+    <div class="project-container">
+      <h1 class="project-title">OS for Agents</h1>
+
+      <section class="project-section project-section--first" aria-labelledby="post-app-title">
+        <h2 id="post-app-title" class="project-section__title">A post-app world for wearables</h2>
+        <div class="project-copy">
+          <p>Apps are not designed to consume much real time context. They always land you on the home page with the same set of content regardless of what's going on in your life.</p>
+          <p>A set of capabilities packaged at design time by companies and creators, based on user research and assumptions about what the user wants, as well as what makes sense for their business.</p>
+          <ul>
+            <li>They have to include all the capabilities to cover all their users and all the use cases. For any particular user, this means most of the functions are noises at that particular moment.</li>
+            <li>Creators have to impose an info architecture so people can find what they need. The reality is that people spend too much time in the app just navigating to the actual function or info they need.</li>
+          </ul>
+          <p>The number of apps are overwhelming thanks to the growing ecosystem in the last decade. Managing apps has officially become a task now.</p>
+          <p>Apps are reflections of business models, not a user's daily flow. They are siloed, individual islands in the sea of data. Navigating your digital and physical life requires you to switch back and forth among different apps.</p>
+          <p>The download model assumes all apps are equal. But naturally some apps are used less frequently than others. A rarely used app still occupies your device the same way as your frequently used apps, until you decide to delete it. And then later you find out you need it again just for this one specific time, so you have to download it again.</p>
+          <p>Mobile phones can endure all these because they have a big enough screen, but also at the cost of taking people out of the moment.</p>
+          <p>However, wearables promise to fix the problem mobile phones created. Instead of taking us out from the moment, they can assist us in a way that keeps us focused on the moment, and the life around us.</p>
+        </div>
+        <figure class="project-media project-media--text">
+          <img src="assets/OS for Agents/Apps Diagram.png" alt="Diagram comparing the app model to a wearable OS and agent model.">
+        </figure>
+      </section>
+
+      <section class="project-section" aria-labelledby="successors-title">
+        <h2 id="successors-title" class="project-section__title">Agents as the successors of apps on wearables</h2>
+        <div class="project-copy">
+          <p>If our OS hosts agents instead of apps, a lot of the problems mentioned above will naturally be resolved.</p>
+        </div>
+
+        <div class="project-table-wrap" aria-label="Comparison of current apps and agents">
+          <table class="project-table">
+            <thead>
+              <tr>
+                <th scope="col">Current Apps</th>
+                <th scope="col">Agents</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Not designed to consume much real time context; assume the same starting point each time.</td>
+                <td>Use context to start at a different point of the flow each time.</td>
+              </tr>
+              <tr>
+                <td>Capabilities packaged at design time.</td>
+                <td>Capabilities acquired based on the jobs-to-be-done at that moment.</td>
+              </tr>
+              <tr>
+                <td>Users have to manually manage a large amount of apps.</td>
+                <td>The OS can manage agents for users. Agents can also manage themselves.</td>
+              </tr>
+              <tr>
+                <td>Siloed; lots of friction to switch between apps.</td>
+                <td>Proactive. Created based on jobs-to-be-done to minimize switching.</td>
+              </tr>
+              <tr>
+                <td>The way the OS organizes and presents apps assumes equal frequency of usage across all apps.</td>
+                <td>The OS and agents can understand and anticipate usage patterns based on context.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="project-copy">
+          <p>With users' permissions, agents take initiatives and proactively engage in 3 different ways:</p>
+          <p>Interact with users to acquire goals and ways of working</p>
+          <p>Interact with the world (physical and digital) to gather context</p>
+          <p>Interact with tools to execute tasks</p>
+        </div>
+
+        <figure class="project-media project-media--transparent project-media--spaced">
+          <img src="assets/OS for Agents/Agent Diagram.png" alt="Diagram showing how agents interact with users, the physical and digital world, and tools to execute tasks.">
+        </figure>
+
+        <div class="project-copy project-copy--after-media">
+          <p>One of the big reasons for agents to work better than apps on wearables is the realtime specific context made available through the sensors on wearables. Smartphones and our laptops don't have access to context that rich and in such granularity.</p>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="shell-title">
+        <h2 id="shell-title" class="project-section__title">A Few Possible Wearable Shell Model for the World of Agents</h2>
+        <div class="project-copy">
+          <p>At the heart of a shell model is the kind of relationship users want with the OS and the agent. One of the most critical debates is how much autonomy does the system have on managing and deploying agents and how much control and transparency does the user want in the process. A more centralized model offloads most of the decision to the system, while a more distributed model relies more on users to do the orchestration.</p>
+        </div>
+
+        <div class="project-placeholder" role="img" aria-label="Placeholder for Dora Pocket illustration"></div>
+        <div class="bullet-block bullet-block--one">
+          <div class="bullet-point">
+            <h3>The dora pocket - a black box of agents</h3>
+            <p>Users form a long term relationship with the OS, who serves as a meta agent managing all other agents.</p>
+            <p>The OS handles what agent would get called based on the context.</p>
+            <p>Users don't know what agents are in the OS's pocket, how many of them nor how they are organized. The pocket is a black box for users.</p>
+            <p>The OS can pick another agent from the pocket if things don't work out.</p>
+            <p>Agents could be reusable or disposable and the OS will make the decision.</p>
+            <p>Users can make their request and complain. But most of the time the OS takes the initiative in choosing agents.</p>
+          </div>
+        </div>
+
+        <div class="project-placeholder" role="img" aria-label="Placeholder for Personal Council illustration"></div>
+        <div class="bullet-block bullet-block--one">
+          <div class="bullet-point">
+            <h3>My personal council - lifelong partnership with a small group of agents</h3>
+            <p>Users and the council know each other really well. Each agent in the council is specialized in one foundational pursuit of life that persists through time.</p>
+            <p>The council can individually or collectively form opinions, give advice and execute plans.</p>
+            <p>They might have conflicting goals or characteristics to be able to bring you various perspectives and handle all the different aspects of life.</p>
+            <p>Agents in the council can employ and manage other agents (with user's permission). Each agent could be equipped with different "skills" and context depending on the task at hand. Therefore users can manage a fairly small list of agents aligned with core life level goals that won't change much over time, while enabling them to accomplish a potentially limitless variety of tasks.</p>
+            <p>Users can rely on "stand-ups", "check-ins" and "reviews" to make sure agents stay aligned with goals and on track with plans.</p>
+            <p>OS fades into the background to power the relationship and connection, manage permissions for context and organize the inventory of "skills".</p>
+          </div>
+        </div>
+
+        <div class="project-placeholder" role="img" aria-label="Placeholder for Agent Marketplace illustration"></div>
+        <div class="bullet-block bullet-block--one">
+          <div class="bullet-point">
+            <h3>Agent Marketplace</h3>
+            <p>OS provides and manages a marketplace of agents.</p>
+            <p>Users find and hire an agent from the marketplace based on the job at hand.</p>
+            <p>The user-agent relationship ends when the job ends. It's temporary and transactional.</p>
+            <p>Users can keep hiring the same agent or choose a different one for the job next time if the previous experience was not satisfying.</p>
+          </div>
+        </div>
+      </section>
+
+      <a class="button back-to-top" href="#top">Back to top</a>
+    </div>
+  </main>
+</body>
+</html>

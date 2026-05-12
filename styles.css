@@ -227,6 +227,10 @@ img {
   margin-top: 64px;
 }
 
+.project-section--first {
+  margin-top: 0;
+}
+
 .project-section--overview {
   margin-top: 24px;
 }
@@ -257,6 +261,23 @@ img {
   margin-bottom: 24px;
 }
 
+.project-copy ul {
+  margin: 0 0 16px;
+  padding-left: 24px;
+}
+
+.project-copy li {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.project-copy--after-media {
+  margin-top: 24px;
+}
+
 .project-media {
   margin: 0;
 }
@@ -277,6 +298,11 @@ img {
 
 .project-media--spaced {
   margin-top: 48px;
+}
+
+.project-media--text {
+  width: 100%;
+  max-width: 720px;
 }
 
 .project-media img {
@@ -304,6 +330,11 @@ img {
   max-width: 720px;
 }
 
+.bullet-block--one {
+  width: 100%;
+  max-width: 720px;
+}
+
 .bullet-point {
   flex: 1 1 0;
 }
@@ -323,6 +354,62 @@ img {
 
 .bullet-point p {
   font-weight: 400;
+}
+
+.bullet-point p + p {
+  margin-top: 0;
+}
+
+.project-table-wrap {
+  width: 100%;
+  max-width: 720px;
+  margin-bottom: 24px;
+  overflow-x: auto;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+}
+
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  background: transparent;
+}
+
+.project-table th,
+.project-table td {
+  padding: 10px 12px;
+  border-top: 1px solid #d3d3d3;
+  border-left: 1px solid #d3d3d3;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-align: left;
+  vertical-align: top;
+}
+
+.project-table th {
+  background: rgba(0, 0, 0, 0.05);
+  font-weight: 700;
+}
+
+.project-table td {
+  background: transparent;
+  font-weight: 400;
+}
+
+.project-placeholder {
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 720 / 307;
+  margin-bottom: 24px;
+  background: #d9d9d9;
+}
+
+.project-placeholder + .bullet-block,
+.bullet-block + .project-placeholder {
+  margin-top: 24px;
 }
 
 @media (max-width: 1024px) {
@@ -409,6 +496,10 @@ img {
 
   .project-section {
     margin-top: 48px;
+  }
+
+  .project-section--first {
+    margin-top: 0;
   }
 
   .project-section--overview {
