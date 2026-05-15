@@ -309,6 +309,10 @@ img {
   max-width: 720px;
 }
 
+.project-media--shell {
+  margin-bottom: 24px;
+}
+
 .project-media img {
   width: 100%;
   height: auto;
