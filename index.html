@@ -100,5 +100,25 @@
 
     <a class="button back-to-top" href="#top">Back to top</a>
   </main>
+  <script>
+    const fitProjectCardImages = () => {
+      document.querySelectorAll(".project-card__visual").forEach((visual) => {
+        const image = visual.querySelector("img");
+
+        if (!image || !image.naturalWidth || !image.naturalHeight || !visual.clientHeight) {
+          return;
+        }
+
+        const heightFitWidth = visual.clientHeight * (image.naturalWidth / image.naturalHeight);
+        visual.classList.toggle("project-card__visual--fill-width", heightFitWidth < visual.clientWidth);
+      });
+    };
+
+    window.addEventListener("load", fitProjectCardImages);
+    window.addEventListener("resize", fitProjectCardImages);
+    document.querySelectorAll(".project-card__visual img").forEach((image) => {
+      image.addEventListener("load", fitProjectCardImages);
+    });
+  </script>
 </body>
 </html>
