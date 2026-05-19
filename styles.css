@@ -118,7 +118,17 @@ img {
   gap: 24px;
 }
 
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .projects__grid {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+}
+
 .project-card {
+  --spotlight-x: 50%;
+  --spotlight-y: 50%;
+  position: relative;
   height: 600px;
   display: flex;
   flex-direction: column;
@@ -128,9 +138,55 @@ img {
   border-radius: 16px;
   color: #000;
   text-decoration: none;
+  isolation: isolate;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.project-card::before,
+.project-card::after {
+  content: "";
+  position: absolute;
+  left: var(--spotlight-x);
+  top: var(--spotlight-y);
+  width: 648px;
+  height: 648px;
+  pointer-events: none;
+  background-image: url("assets/Home Page/Spotlight.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 180ms ease;
+}
+
+.project-card::before {
+  z-index: 0;
+}
+
+.project-card::after {
+  z-index: 3;
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  border-color: transparent;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+
+.project-card:hover::before,
+.project-card:focus-visible::before {
+  opacity: 1;
+}
+
+.project-card:hover::after,
+.project-card:focus-visible::after {
+  opacity: 0.4;
 }
 
 .project-card__text {
+  position: relative;
+  z-index: 1;
   width: 100%;
   flex: 0 0 auto;
   padding: 24px 24px 0;
@@ -159,6 +215,7 @@ img {
 
 .project-card__visual {
   position: relative;
+  z-index: 1;
   width: 100%;
   max-height: 400px;
   margin-top: auto;

@@ -119,6 +119,14 @@
     document.querySelectorAll(".project-card__visual img").forEach((image) => {
       image.addEventListener("load", fitProjectCardImages);
     });
+
+    document.querySelectorAll(".project-card").forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--spotlight-x", `${event.clientX - rect.left}px`);
+        card.style.setProperty("--spotlight-y", `${event.clientY - rect.top}px`);
+      });
+    });
   </script>
 </body>
 </html>
