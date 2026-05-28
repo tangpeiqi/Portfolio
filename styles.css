@@ -123,6 +123,12 @@ img {
     padding-right: 24px;
     padding-left: 24px;
   }
+
+  .project-nav__bar,
+  .project-nav__menu {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
 }
 
 .project-card {
@@ -257,8 +263,31 @@ img {
 }
 
 .project-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
   min-height: 64px;
-  background: rgba(245, 242, 235, 0.9);
+  background: rgba(245, 242, 235, 0.8);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition: border-color 160ms ease;
+}
+
+.project-nav--scrolled,
+.project-nav:focus-within,
+.project-nav:hover {
+  border-bottom: 1px solid #ccc;
+}
+
+.project-nav__bar {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 64px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .project-container {
@@ -269,12 +298,6 @@ img {
   padding-left: 24px;
 }
 
-.project-nav .project-container {
-  min-height: 64px;
-  display: flex;
-  align-items: center;
-}
-
 .project-nav__brand {
   font-family: "Rock Salt", cursive;
   font-size: 16px;
@@ -282,6 +305,179 @@ img {
   line-height: normal;
   letter-spacing: 0;
   text-decoration: none;
+  white-space: nowrap;
+}
+
+.project-nav__crumb {
+  display: none;
+  align-items: center;
+  gap: 16px;
+}
+
+.project-nav--scrolled:not(:hover):not(:focus-within) .project-nav__crumb {
+  display: flex;
+}
+
+.project-nav__separator {
+  width: 4px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  transform: rotate(45deg);
+}
+
+.project-nav__current,
+.project-nav__item {
+  font-size: 16px;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.project-nav__current {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.project-nav__toggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  margin-left: auto;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #000;
+  cursor: pointer;
+}
+
+.project-nav__toggle-icon {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 12px;
+  margin: auto;
+  border-top: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+}
+
+.project-nav__toggle-icon::before,
+.project-nav__toggle-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  background: currentColor;
+  transition: transform 160ms ease, top 160ms ease, opacity 160ms ease;
+}
+
+.project-nav__toggle-icon::before {
+  top: 3px;
+}
+
+.project-nav__toggle-icon::after {
+  top: 3px;
+  opacity: 0;
+}
+
+.project-nav--open .project-nav__toggle-icon {
+  border-color: transparent;
+}
+
+.project-nav--open .project-nav__toggle-icon::before {
+  top: 3px;
+  transform: rotate(45deg);
+}
+
+.project-nav--open .project-nav__toggle-icon::after {
+  top: 3px;
+  opacity: 1;
+  transform: rotate(-45deg);
+}
+
+.project-nav__menu {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, 64px);
+  width: 100%;
+  max-width: 1200px;
+  max-height: 0;
+  margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-height 160ms ease, opacity 160ms ease, padding 160ms ease;
+}
+
+.project-nav:hover .project-nav__menu,
+.project-nav:focus-within .project-nav__menu {
+  max-height: 144px;
+  padding: 8px 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.project-nav__item {
+  min-width: 0;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  color: #000;
+  font-weight: 400;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+a.project-nav__item {
+  cursor: pointer;
+}
+
+.project-nav__item:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.project-nav__item:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.project-nav__item:nth-child(3) {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.project-nav__item:nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.project-nav__item:nth-child(5) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.project-nav__item:nth-child(6) {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.project-nav__item:hover,
+.project-nav__item:focus-visible,
+.project-nav__item[aria-current="page"] {
+  font-weight: 700;
+  outline: none;
+}
+
+.project-nav__item[aria-disabled="true"] {
+  cursor: default;
+}
+
+.project-nav__item[aria-current="page"] {
+  cursor: default;
 }
 
 .project-page {
@@ -504,6 +700,69 @@ img {
     padding-left: 24px;
   }
 
+  .project-nav:hover {
+    border-bottom-color: transparent;
+  }
+
+  .project-nav--scrolled,
+  .project-nav--open,
+  .project-nav:focus-within {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .project-nav__bar {
+    max-width: none;
+    justify-content: space-between;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .project-nav__crumb {
+    display: none;
+  }
+
+  .project-nav--scrolled:not(:hover):not(:focus-within) .project-nav__crumb {
+    display: none;
+  }
+
+  .project-nav__toggle {
+    display: block;
+  }
+
+  .project-nav__menu {
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(3, 64px);
+    max-width: none;
+    width: 100%;
+  }
+
+  .project-nav.project-nav--open .project-nav__menu {
+    max-height: 192px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .project-nav:not(.project-nav--open):hover .project-nav__menu,
+  .project-nav:not(.project-nav--open):focus-within .project-nav__menu {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .project-nav--open:hover .project-nav__menu,
+  .project-nav--open:focus-within .project-nav__menu {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .project-nav__item:nth-child(n) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
   .site-title {
     margin-right: 0;
     margin-bottom: 88px;
@@ -519,6 +778,27 @@ img {
 @media (max-width: 767px) {
   .home {
     padding: 48px 16px 96px;
+  }
+
+  .project-nav__bar {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .project-nav__menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-nav.project-nav--open .project-nav__menu {
+    max-height: 384px;
+  }
+
+  .project-nav__item {
+    width: 100%;
+    padding-right: 16px;
+    padding-left: 16px;
+    white-space: normal;
   }
 
   .hero,

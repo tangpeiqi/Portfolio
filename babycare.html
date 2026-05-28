@@ -11,10 +11,25 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body id="top">
-  <header class="project-nav" aria-label="Portfolio navigation">
-    <div class="project-container">
-      <a class="project-nav__brand" href="index.html">Peiqi Tang</a>
+  <header class="project-nav" aria-label="Portfolio navigation" data-current-project="BabyCare: A Wearable Agent">
+    <div class="project-nav__bar">
+      <a class="project-nav__brand" href="index.html">Peiqi&nbsp;&nbsp;Tang</a>
+      <div class="project-nav__crumb" aria-hidden="true">
+        <span class="project-nav__separator"></span>
+        <span class="project-nav__current">BabyCare: A Wearable Agent</span>
+      </div>
+      <button class="project-nav__toggle" type="button" aria-label="Open project menu" aria-expanded="false" aria-controls="project-menu">
+        <span class="project-nav__toggle-icon" aria-hidden="true"></span>
+      </button>
     </div>
+    <nav id="project-menu" class="project-nav__menu" aria-label="Projects">
+      <span class="project-nav__item" aria-current="page">BabyCare: A Wearable Agent</span>
+      <a class="project-nav__item" href="os-for-agents.html">OS for Agents</a>
+      <span class="project-nav__item" aria-disabled="true">GenUI</span>
+      <span class="project-nav__item" aria-disabled="true">Projects at Meta</span>
+      <span class="project-nav__item" aria-disabled="true">Fireflies: A Visual Language for Visual Search</span>
+      <span class="project-nav__item" aria-disabled="true">Amazon Lens</span>
+    </nav>
   </header>
 
   <main class="project-page">
@@ -102,6 +117,28 @@
     </div>
   </main>
   <script>
+    const projectNav = document.querySelector(".project-nav");
+    const navToggle = document.querySelector(".project-nav__toggle");
+    const projectTitle = document.querySelector(".project-title");
+
+    const syncProjectNav = () => {
+      if (!projectNav || !projectTitle) {
+        return;
+      }
+
+      projectNav.classList.toggle("project-nav--scrolled", projectTitle.getBoundingClientRect().bottom <= 0);
+    };
+
+    navToggle?.addEventListener("click", () => {
+      const isOpen = projectNav.classList.toggle("project-nav--open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Close project menu" : "Open project menu");
+    });
+
+    window.addEventListener("scroll", syncProjectNav, { passive: true });
+    window.addEventListener("resize", syncProjectNav);
+    syncProjectNav();
+
     const babycareVideo = document.getElementById("babycare-video");
     const babycareVideoId = babycareVideo.dataset.videoId;
     const babycareVideoParams = new URLSearchParams({
