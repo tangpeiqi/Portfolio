@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Lens - Peiqi Tang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Rock+Salt&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=202605281541">
+</head>
+<body id="top">
+  <header class="project-nav" aria-label="Portfolio navigation" data-current-project="Amazon Lens">
+    <div class="project-nav__bar">
+      <a class="project-nav__brand" href="index.html">Peiqi&nbsp;&nbsp;Tang</a>
+      <div class="project-nav__crumb" aria-hidden="true">
+        <span class="project-nav__separator"></span>
+        <span class="project-nav__current">Amazon Lens</span>
+      </div>
+      <button class="project-nav__toggle" type="button" aria-label="Open project menu" aria-expanded="false" aria-controls="project-menu">
+        <span class="project-nav__toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    <nav id="project-menu" class="project-nav__menu" aria-label="Projects">
+      <a class="project-nav__item" href="babycare.html">BabyCare: A Wearable Agent</a>
+      <a class="project-nav__item" href="os-for-agents.html">OS for Agents</a>
+      <span class="project-nav__item" aria-disabled="true">GenUI</span>
+      <a class="project-nav__item" href="project-at-meta.html">Projects at Meta</a>
+      <a class="project-nav__item" href="fireflies.html">Fireflies, A Visual Language for Visual Search</a>
+      <span class="project-nav__item" aria-current="page">Amazon Lens</span>
+    </nav>
+  </header>
+
+  <main class="project-page">
+    <div class="project-container">
+      <h1 class="project-title">Amazon Lens</h1>
+
+      <section class="project-section project-section--first" aria-labelledby="manual-search-title">
+        <h2 id="manual-search-title" class="project-section__title">From auto search to user initiated</h2>
+        <div class="project-copy">
+          <p>The first big design update of the product I was in charge of not long after joining was to change the search from starting automatically after launch to starting only after the user taps the button on the UI.</p>
+        </div>
+
+        <figure class="project-media project-media--text">
+          <img src="assets/Amazon Lens/From Auto to User Initiate.png" width="2360" height="1846" alt="Design flow showing the change from automatic camera search to user-initiated search.">
+        </figure>
+
+        <div class="project-copy project-copy--after-media">
+          <p>The experience of starting automatically was more magical and had less friction. However, at that time users were not familiar with the concept of searching with a live camera. As a result, we got a lot of search requests for pants, shoes, and rugs because users launched the feature with their camera still facing down, and our model already stopped to present them search results before they even had the chance to point the camera at the product they wanted.</p>
+          <p>We had a big debate internally, and a round of A/B tests with 4 options. Eventually we settled on tapping a button to start searching and then letting the model decide when it had a good enough result to stop and present. Immediately we saw search queries about shoes, pants, and rugs drop, and fewer bounces (try again) for the remaining queries in those categories.</p>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="tags-title">
+        <h2 id="tags-title" class="project-section__title">Nondeterministic Output: Tags</h2>
+        <div class="project-copy">
+          <p>In addition to image matching algorithms, the team developed a new model that could return text describing the captured scene. The nondeterministic nature of the model means that it outputs words it thinks best represent the scene in the order of descending confidence scores.</p>
+        </div>
+
+        <figure class="project-media project-media--text">
+          <img src="assets/Amazon Lens/Tags.png" width="2360" height="1892" alt="Amazon Lens design showing model-generated words as selectable tags.">
+        </figure>
+
+        <div class="project-copy project-copy--after-media">
+          <p>I convinced the team to take full advantage of this new capability by exposing the rest of the low confidence words the model generated. I created a new design that turns all words into selectable tags so users can modify the model output easily to get the search result they want.</p>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="longtail-title">
+        <h2 id="longtail-title" class="project-section__title">Nondeterministic Output: Longtail Cases</h2>
+        <div class="project-copy">
+          <p>Another nondeterministic nature of this product experience is that it has a long tail of cases when the model won't be able to provide good results, or any result at all. This could be a cluttered scene, an empty scene, or just a very weird angle of an object.</p>
+        </div>
+
+        <figure class="project-media project-media--text">
+          <img src="assets/Amazon Lens/Contextual 1.png" width="1963" height="895" alt="Contextual card design for redirecting Amazon Lens users from longtail result cases.">
+        </figure>
+
+        <figure class="project-media project-media--text project-media--spaced">
+          <img src="assets/Amazon Lens/Contextual 2.png" width="1963" height="895" alt="Additional contextual card design for redirecting Amazon Lens users from longtail result cases.">
+        </figure>
+
+        <div class="project-copy project-copy--after-media">
+          <p>I designed a set of cards based on how we cluster these longtail cases, aiming at redirecting users out of them. The app can pick and choose what cards are suitable given the scene. The goal is that as people keep using the product, the cluster will evolve, and we can keep building on the library of cards. This shows that we understand users' intent, while at the same time, giving them the flexibility to select what they want.</p>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="style-snap-title">
+        <h2 id="style-snap-title" class="project-section__title">Style Snap</h2>
+        <div class="project-copy">
+          <p>In 2018, we wanted to repurpose the upload photo experience to focus on fashion because the data showed a lot of the photos uploaded featured some kind of fashion garments. Continuing to copy the experience flow from live camera search made less sense from then on because screenshots of fashion garments often include an entire outfit made up of multiple pieces.</p>
+        </div>
+
+        <figure class="project-media project-media--transparent">
+          <img src="assets/Amazon Lens/Current StyleSnap High Level Flow.png" width="4096" height="1367" alt="High-level Style Snap flow for selecting a fashion garment from an uploaded photo.">
+        </figure>
+
+        <div class="project-copy project-copy--after-media">
+          <p>Therefore I completely reimagined the experience by enabling users to select a garment of focus on the photo itself. The new design pioneered this initiative way of communicating and disambiguating intent and set the expectation up front about what item the model can recognize from the provided photo.</p>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="auto-search-title">
+        <h2 id="auto-search-title" class="project-section__title">Back to auto search</h2>
+        <div class="project-copy">
+          <p>Recently, the visual search team made another iteration of the product to bring back the auto search. The action button now snaps a photo, stops the search, and presents the results instead of starting the search and letting the model decide when to stop.</p>
+        </div>
+
+        <figure class="project-media project-media--text">
+          <img src="assets/Amazon Lens/Latest UI.png" width="3290" height="2790" alt="Latest Amazon Lens UI showing the updated auto search camera experience.">
+        </figure>
+
+        <div class="project-copy project-copy--after-media">
+          <p>Since this update happened after I left, I only have a hypothesis: people are more familiar with the concept of using cameras and photos to search. The gatekeeper we put in a couple years ago to ensure good results for the first try now only adds friction. With the advancement in AI, it is much easier to recognize objects even with poor framing. And the team can integrate with an LLM to catch all longtail cases and let users further clarify their intent.</p>
+        </div>
+      </section>
+
+      <a class="button back-to-top" href="#top">Back to top</a>
+    </div>
+  </main>
+  <script>
+    const projectNav = document.querySelector(".project-nav");
+    const navToggle = document.querySelector(".project-nav__toggle");
+    const projectTitle = document.querySelector(".project-title");
+
+    const syncProjectNav = () => {
+      if (!projectNav || !projectTitle) {
+        return;
+      }
+
+      projectNav.classList.toggle("project-nav--scrolled", projectTitle.getBoundingClientRect().bottom <= 0);
+    };
+
+    navToggle?.addEventListener("click", () => {
+      const isOpen = projectNav.classList.toggle("project-nav--open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Close project menu" : "Open project menu");
+    });
+
+    window.addEventListener("scroll", syncProjectNav, { passive: true });
+    window.addEventListener("resize", syncProjectNav);
+    syncProjectNav();
+  </script>
+</body>
+</html>

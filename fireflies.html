@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Fireflies, A Visual Language for Visual Search - Peiqi Tang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Rock+Salt&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=202605281541">
+</head>
+<body id="top">
+  <header class="project-nav" aria-label="Portfolio navigation" data-current-project="Fireflies, A Visual Language for Visual Search">
+    <div class="project-nav__bar">
+      <a class="project-nav__brand" href="index.html">Peiqi&nbsp;&nbsp;Tang</a>
+      <div class="project-nav__crumb" aria-hidden="true">
+        <span class="project-nav__separator"></span>
+        <span class="project-nav__current">Fireflies, A Visual Language for Visual Search</span>
+      </div>
+      <button class="project-nav__toggle" type="button" aria-label="Open project menu" aria-expanded="false" aria-controls="project-menu">
+        <span class="project-nav__toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    <nav id="project-menu" class="project-nav__menu" aria-label="Projects">
+      <a class="project-nav__item" href="babycare.html">BabyCare: A Wearable Agent</a>
+      <a class="project-nav__item" href="os-for-agents.html">OS for Agents</a>
+      <span class="project-nav__item" aria-disabled="true">GenUI</span>
+      <a class="project-nav__item" href="project-at-meta.html">Projects at Meta</a>
+      <span class="project-nav__item" aria-current="page">Fireflies, A Visual Language for Visual Search</span>
+      <a class="project-nav__item" href="amazon-lens.html">Amazon Lens</a>
+    </nav>
+  </header>
+
+  <main class="project-page">
+    <div class="project-container">
+      <h1 class="project-title">Fireflies, A Visual Language for Visual Search</h1>
+
+      <section class="project-section project-section--first" aria-label="Overview">
+        <div class="project-copy">
+          <p>Initiated this project in 2017 while I was at Amazon. I was the solo designer on this project.</p>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="problems-title">
+        <h2 id="problems-title" class="project-section__title">Problems on the live camera UI at that time</h2>
+        <div class="project-copy">
+          <p><strong>1st:</strong> Live camera search uses blue dots to indicate what the model is paying attention to. However they don't guide customers to achieve a successful scan.</p>
+        </div>
+
+        <figure class="project-media project-media--opaque">
+          <iframe
+            width="1152"
+            height="648"
+            src="https://www.youtube.com/embed/DiVVvj-8RYA?rel=0"
+            title="Original live camera search experience"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </figure>
+
+        <div class="project-copy project-copy--after-media">
+          <p><strong>2nd:</strong> Other camera features on Amazon Shopping were all using their own language to talk to our customers, which forced our customers to learn a new language every time they use a different camera feature.</p>
+        </div>
+
+        <figure class="project-media project-media--transparent">
+          <img src="assets/Fireflies/Consistency Before.png" width="2780" height="1082" alt="Amazon Shopping camera features before Fireflies, showing inconsistent visual languages across camera experiences.">
+        </figure>
+      </section>
+
+      <section class="project-section" aria-labelledby="goal-title">
+        <h2 id="goal-title" class="project-section__title">My goal is to</h2>
+        <div class="project-copy">
+          <ul>
+            <li>Release the full potential of the dots as a visual language to guide users through the experience.</li>
+            <li>Bring design consistency to all camera related features across Amazon Shopping with this new visual language.</li>
+          </ul>
+          <p>...and I called this visual language Fireflies.</p>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="making-title">
+        <h2 id="making-title" class="project-section__title">The making of Fireflies</h2>
+        <div class="project-copy">
+          <p>I started by diving deep into the customer flows for each feature, then worked with scientists and engineers who built our engine to break the flows down into small moments. For each moment, I listed out the messages we should convey to customers. Based on the definition of the moments and the messages needed to be conveyed, I defined the fireflies behaviors. Since I planned to standardize them, I gave each of them a name.</p>
+        </div>
+
+        <figure class="project-media project-media--opaque">
+          <img src="assets/Fireflies/Fireflies_Moments.png" width="2738" height="1508" alt="Fireflies moments mapped across customer flows and messages.">
+        </figure>
+
+        <div class="project-copy project-copy--after-media">
+          <p><strong>Behavior of an individual firefly:</strong></p>
+        </div>
+
+        <figure class="project-media project-media--opaque">
+          <img src="assets/Fireflies/LifeCycle.png" width="2458" height="692" alt="Lifecycle behavior of an individual firefly.">
+        </figure>
+
+        <div class="project-copy project-copy--after-media">
+          <p><strong>Behavior as a group:</strong></p>
+        </div>
+
+        <figure class="project-media project-media--opaque">
+          <img src="assets/Fireflies/Spec_Hunting.png" width="1500" height="1063" alt="Hunting behavior specification for fireflies as a group.">
+        </figure>
+      </section>
+
+      <section class="project-section" aria-labelledby="redesign-title">
+        <h2 id="redesign-title" class="project-section__title">Redesigning camera search</h2>
+        <div class="project-copy">
+          <p>I then used these moments to redesign the camera search feature.</p>
+        </div>
+
+        <figure class="project-media project-media--opaque">
+          <iframe
+            width="1152"
+            height="648"
+            src="https://www.youtube.com/embed/rpmqjIrqN1Y?rel=0"
+            title="Camera search redesigned with Fireflies"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </figure>
+
+        <div class="project-copy project-copy--after-media">
+          <p>This is how camera features across the board look like when fireflies are implemented:</p>
+        </div>
+
+        <figure class="project-media project-media--transparent">
+          <img src="assets/Fireflies/Consistency After.png" width="2742" height="1138" alt="Amazon Shopping camera features after Fireflies, showing consistent visual language across camera experiences.">
+        </figure>
+      </section>
+
+      <a class="button back-to-top" href="#top">Back to top</a>
+    </div>
+  </main>
+  <script>
+    const projectNav = document.querySelector(".project-nav");
+    const navToggle = document.querySelector(".project-nav__toggle");
+    const projectTitle = document.querySelector(".project-title");
+
+    const syncProjectNav = () => {
+      if (!projectNav || !projectTitle) {
+        return;
+      }
+
+      projectNav.classList.toggle("project-nav--scrolled", projectTitle.getBoundingClientRect().bottom <= 0);
+    };
+
+    navToggle?.addEventListener("click", () => {
+      const isOpen = projectNav.classList.toggle("project-nav--open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Close project menu" : "Open project menu");
+    });
+
+    window.addEventListener("scroll", syncProjectNav, { passive: true });
+    window.addEventListener("resize", syncProjectNav);
+    syncProjectNav();
+  </script>
+</body>
+</html>

@@ -254,7 +254,7 @@ img {
 }
 
 .project-page .back-to-top {
-  margin-top: 64px;
+  margin: 64px 0 0;
 }
 
 .project-nav {
@@ -710,6 +710,83 @@ a.project-nav__item {
   margin-top: 24px;
 }
 
+.project-bookmarks {
+  width: 100%;
+  max-width: 720px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.project-bookmark {
+  display: flex;
+  height: 211px;
+  overflow: hidden;
+  border: 1px solid #d3d3d3;
+  border-radius: 16px;
+  color: #000;
+  text-decoration: none;
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.project-bookmark:hover,
+.project-bookmark:focus-visible {
+  border-color: transparent;
+  background: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+
+.project-bookmark__image {
+  width: 216px;
+  height: auto;
+  margin: 24px 0 24px 24px;
+  border-radius: 8px;
+  align-self: stretch;
+  flex: 0 0 216px;
+  object-fit: cover;
+}
+
+.project-bookmark__body {
+  min-width: 0;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.project-bookmark__site,
+.project-bookmark__title,
+.project-bookmark__description {
+  display: block;
+  letter-spacing: 0;
+}
+
+.project-bookmark__site {
+  color: #505050;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.project-bookmark__title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.project-bookmark__description {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+}
+
 @media (max-width: 1024px) {
   .home {
     padding-right: 24px;
@@ -909,7 +986,25 @@ a.project-nav__item {
     gap: 24px;
   }
 
+  .project-bookmark {
+    height: 303px;
+  }
+
+  .project-bookmark__description {
+    -webkit-line-clamp: 5;
+  }
+
+  .project-bookmark__image {
+    width: 112px;
+    margin: 16px 0 16px 16px;
+    flex-basis: 112px;
+  }
+
+  .project-bookmark__body {
+    padding: 16px;
+  }
+
   .project-page .back-to-top {
-    margin-top: 48px;
+    margin: 48px 0 0;
   }
 }

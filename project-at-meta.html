@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects at Meta - Peiqi Tang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Rock+Salt&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=202605281541">
+</head>
+<body id="top">
+  <header class="project-nav" aria-label="Portfolio navigation" data-current-project="Projects at Meta">
+    <div class="project-nav__bar">
+      <a class="project-nav__brand" href="index.html">Peiqi&nbsp;&nbsp;Tang</a>
+      <div class="project-nav__crumb" aria-hidden="true">
+        <span class="project-nav__separator"></span>
+        <span class="project-nav__current">Projects at Meta</span>
+      </div>
+      <button class="project-nav__toggle" type="button" aria-label="Open project menu" aria-expanded="false" aria-controls="project-menu">
+        <span class="project-nav__toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    <nav id="project-menu" class="project-nav__menu" aria-label="Projects">
+      <a class="project-nav__item" href="babycare.html">BabyCare: A Wearable Agent</a>
+      <a class="project-nav__item" href="os-for-agents.html">OS for Agents</a>
+      <span class="project-nav__item" aria-disabled="true">GenUI</span>
+      <span class="project-nav__item" aria-current="page">Projects at Meta</span>
+      <a class="project-nav__item" href="fireflies.html">Fireflies, A Visual Language for Visual Search</a>
+      <a class="project-nav__item" href="amazon-lens.html">Amazon Lens</a>
+    </nav>
+  </header>
+
+  <main class="project-page">
+    <div class="project-container">
+      <h1 class="project-title">Projects at Meta</h1>
+
+      <section class="project-section project-section--first" aria-label="Overview">
+        <div class="project-copy">
+          <p><strong>2020 - 2026</strong></p>
+          <p>Our research org within Reality Labs is composed of designers &amp; prototypes, research scientists, material scientists, hardware, firmware and software engineers. We explore and develop cutting edge technologies, devices and experiences, with the goal of transferring mature concepts to product teams for further development, ultimately bringing them to millions of users.</p>
+        </div>
+
+        <figure class="project-media project-media--text">
+          <img src="assets/Projects at Meta/Wrist platform.png" width="711" height="400" alt="Research prototype wrist wearable on a person's arm.">
+        </figure>
+
+        <div class="project-copy project-copy--after-media">
+          <p>In the past 3 years I've been focusing on creating proactive agent experiences on AI wearables with sensors beyond microphones and cameras. With the constellation of wearables, users would be able to leverage a wide range of signals to communicate their intent to AI from implicit signals like hand pose, body pose, eye and head gaze, to explicit ones like voice and gestures. And the AI can rely on not just the display but also audio and haptics to deliver info to users.</p>
+        </div>
+
+        <figure class="project-media project-media--text">
+          <img src="assets/Projects at Meta/10yr vision.png" width="711" height="400" alt="Research prototype scene showing spatial blue interface elements in a physical room.">
+        </figure>
+
+        <div class="project-copy project-copy--after-media">
+          <p>Before working on the specific wearables, I spent my first 2 years at the company creating shell experiences for future AR devices with nondeterministic inputs and outputs. The shell models focused on leveraging user behavior and environmental context at the moment to surface the correct info, and utilizing geometric understanding of the surrounding space to organize UI.</p>
+          <p>Occasionally, I designed work flows and experiences on hardware prototypes for both supervised and unsupervised data collection activities to help collect data for research and model development.</p>
+        </div>
+
+        <div class="project-bookmarks" aria-label="Related Meta research links">
+          <a class="project-bookmark" href="https://tech.facebook.com/reality-labs/2021/3/inside-facebook-reality-labs-the-next-era-of-human-computer-interaction/" target="_blank" rel="noopener noreferrer">
+            <img class="project-bookmark__image" src="assets/Projects at Meta/Bookmarks/hci.png" width="604" height="451" alt="">
+            <span class="project-bookmark__body">
+              <span class="project-bookmark__site">Tech at Meta</span>
+              <span class="project-bookmark__title">Inside Facebook Reality Labs: The next era of human-computer interaction</span>
+              <span class="project-bookmark__description">A 10-year vision for contextually aware, AI-powered AR interfaces that infer intent from the context people choose to share.</span>
+            </span>
+          </a>
+
+          <a class="project-bookmark" href="https://tech.facebook.com/reality-labs/2021/3/inside-facebook-reality-labs-wrist-based-interaction-for-the-next-computing-platform/" target="_blank" rel="noopener noreferrer">
+            <img class="project-bookmark__image" src="assets/Projects at Meta/Bookmarks/wrist-interaction.png" width="604" height="451" alt="">
+            <span class="project-bookmark__body">
+              <span class="project-bookmark__site">Tech at Meta</span>
+              <span class="project-bookmark__title">Inside Facebook Reality Labs: Wrist-based interaction for the next computing platform</span>
+              <span class="project-bookmark__description">A look at wrist-based input and how wearable signals can support interaction for future AR glasses.</span>
+            </span>
+          </a>
+
+          <a class="project-bookmark" href="https://about.fb.com/news/2021/11/reality-labs-haptic-gloves-research/" target="_blank" rel="noopener noreferrer">
+            <img class="project-bookmark__image" src="assets/Projects at Meta/Bookmarks/haptic-gloves.jpg" width="1200" height="675" alt="">
+            <span class="project-bookmark__body">
+              <span class="project-bookmark__site">Meta Newsroom</span>
+              <span class="project-bookmark__title">Inside Reality Labs Research: Bringing Touch to the Virtual World</span>
+              <span class="project-bookmark__description">Reality Labs' haptic glove research explores soft robotics, microfluidics, hand tracking, and haptic rendering for virtual touch.</span>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <a class="button back-to-top" href="#top">Back to top</a>
+    </div>
+  </main>
+  <script>
+    const projectNav = document.querySelector(".project-nav");
+    const navToggle = document.querySelector(".project-nav__toggle");
+    const projectTitle = document.querySelector(".project-title");
+
+    const syncProjectNav = () => {
+      if (!projectNav || !projectTitle) {
+        return;
+      }
+
+      projectNav.classList.toggle("project-nav--scrolled", projectTitle.getBoundingClientRect().bottom <= 0);
+    };
+
+    navToggle?.addEventListener("click", () => {
+      const isOpen = projectNav.classList.toggle("project-nav--open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Close project menu" : "Open project menu");
+    });
+
+    window.addEventListener("scroll", syncProjectNav, { passive: true });
+    window.addEventListener("resize", syncProjectNav);
+    syncProjectNav();
+  </script>
+</body>
+</html>
