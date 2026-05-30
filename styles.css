@@ -599,7 +599,15 @@ a.project-nav__item {
   margin-bottom: 24px;
 }
 
+.project-media--attention {
+  margin-bottom: 24px;
+}
+
 .bullet-block + .project-media--shell {
+  margin-top: 24px;
+}
+
+.bullet-block + .bullet-block {
   margin-top: 24px;
 }
 
