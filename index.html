@@ -54,9 +54,9 @@
           </div>
         </a>
 
-        <article class="project-card project-card--gen-ui">
+        <article class="project-card project-card--gen-ui project-card--coming-soon">
           <div class="project-card__text">
-            <h2>Gen UI</h2>
+            <h2>Gen UI (coming soon)</h2>
             <p>For the first time we have a promising solution for personalizing the UI for a long tail of scenarios thanks to AI's ability to generate UI on-the-go.</p>
             <p>I chose to focus on a smaller screen to strike the balance between personalization and predictability.</p>
           </div>
@@ -120,7 +120,7 @@
       image.addEventListener("load", fitProjectCardImages);
     });
 
-    document.querySelectorAll(".project-card").forEach((card) => {
+    document.querySelectorAll(".project-card:not(.project-card--coming-soon)").forEach((card) => {
       card.addEventListener("pointermove", (event) => {
         const rect = card.getBoundingClientRect();
         card.style.setProperty("--spotlight-x", `${event.clientX - rect.left}px`);
