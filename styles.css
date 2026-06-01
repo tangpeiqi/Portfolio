@@ -568,6 +568,102 @@ a.project-nav__item {
   margin-top: 24px;
 }
 
+.resume-content {
+  width: 100%;
+  max-width: 720px;
+}
+
+.resume-section + .resume-section {
+  margin-top: 64px;
+}
+
+.resume-section__title {
+  margin: 0 0 24px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.resume-entry + .resume-entry {
+  margin-top: 24px;
+}
+
+.resume-entry__header {
+  margin-bottom: 8px;
+}
+
+.resume-entry__meta {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.resume-entry__organization,
+.resume-entry__role,
+.resume-education__degree {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.resume-entry__location,
+.resume-education__school {
+  margin: 0;
+  color: #505050;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.resume-entry__location,
+.resume-entry__date {
+  margin: 0;
+  color: #000;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.resume-entry__date {
+  margin-left: auto;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.resume-entry__role {
+  margin-top: 4px;
+}
+
+.resume-entry ul {
+  margin: 0;
+  padding-left: 24px;
+}
+
+.resume-entry li {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.resume-entry li + li {
+  margin-top: 8px;
+}
+
+.resume-education + .resume-education {
+  margin-top: 16px;
+}
+
+.resume-education__school {
+  margin-top: 4px;
+}
+
 .project-media {
   margin: 0;
 }
@@ -973,6 +1069,33 @@ a.project-nav__item {
 
   .project-section__title {
     font-size: 20px;
+  }
+
+  .resume-section + .resume-section {
+    margin-top: 48px;
+  }
+
+  .resume-section__title {
+    font-size: 20px;
+  }
+
+  .resume-entry__meta {
+    display: block;
+  }
+
+  .resume-entry__location,
+  .resume-entry__date {
+    display: inline;
+  }
+
+  .resume-entry__location::after {
+    content: " | ";
+  }
+
+  .resume-entry__date {
+    margin-left: 0;
+    text-align: left;
+    white-space: normal;
   }
 
   .project-media--transparent {
