@@ -686,6 +686,10 @@ a.project-nav__item {
   margin-top: 48px;
 }
 
+.project-media--after-copy {
+  margin-top: 24px;
+}
+
 .project-media--text {
   width: 100%;
   max-width: 720px;
