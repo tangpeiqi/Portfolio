@@ -2,6 +2,32 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --font-family-body: "Roboto Slab", serif;
+  --font-family-site-name: "Rock Salt", cursive;
+  --font-site-name-size: 64px;
+  --font-site-name-weight: 400;
+  --font-header-1-size: 64px;
+  --font-header-1-weight: 500;
+  --font-header-2-size: 48px;
+  --font-header-2-weight: 400;
+  --font-header-3-size: 24px;
+  --font-header-3-weight: 700;
+  --font-body-size: 16px;
+  --font-body-weight: 400;
+  --font-body-emphasis-size: 16px;
+  --font-body-emphasis-weight: 700;
+  --font-support-size: 12px;
+  --font-support-weight: 400;
+  --font-button-size: 14px;
+  --font-button-weight: 400;
+  --font-line-height-normal: normal;
+  --font-line-height-table: 1.3;
+  --font-letter-spacing: 0;
+  --color-text-primary: #000;
+  --color-text-support: #505050;
+}
+
 *,
 *::before,
 *::after {
@@ -11,10 +37,10 @@ html {
 body {
   margin: 0;
   background: #f5f2eb;
-  color: #000;
-  font-family: "Roboto Slab", serif;
-  font-size: 16px;
-  line-height: normal;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-body);
+  font-size: var(--font-body-size);
+  line-height: var(--font-line-height-normal);
 }
 
 a {
@@ -39,45 +65,58 @@ img {
 
 .site-title {
   margin: 0 24px 65px;
-  font-family: "Rock Salt", cursive;
-  font-size: 64px;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0;
+  font-family: var(--font-family-site-name);
+  font-size: var(--font-site-name-size);
+  font-weight: var(--font-site-name-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .intro {
   width: 100%;
-  max-width: 720px;
   margin: 0 24px;
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 48px;
+}
+
+.intro__text {
+  width: 100%;
+  max-width: 1152px;
+  display: flex;
+  flex-direction: column;
   gap: 24px;
+  font-size: var(--font-header-2-size);
+  font-weight: var(--font-header-2-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .intro__headline {
   width: 100%;
   margin: 0;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
 }
 
-.intro__bio {
+.intro__statement {
   width: 100%;
   margin: 0;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
 }
 
 .intro__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
+  align-items: center;
 }
 
 .button {
@@ -90,11 +129,11 @@ img {
   border: 1px solid #000;
   border-radius: 80px;
   background: transparent;
-  color: #000;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-button-size);
+  font-weight: var(--font-button-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
   text-align: center;
   text-decoration: none;
   transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
@@ -137,7 +176,7 @@ img {
   overflow: hidden;
   border: 1px solid #ccc;
   border-radius: 16px;
-  color: #000;
+  color: var(--color-text-primary);
   text-decoration: none;
   isolation: isolate;
   transition: border-color 160ms ease, box-shadow 160ms ease;
@@ -190,28 +229,32 @@ img {
   z-index: 1;
   width: 100%;
   flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   padding: 24px 24px 0;
   margin-bottom: 0;
 }
 
 .project-card__text h2 {
-  margin: 0 0 16px;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 0;
+  margin: 0;
+  font-size: var(--font-header-3-size);
+  font-weight: var(--font-header-3-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .project-card__text p {
-  margin: 0 0 16px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0;
+  margin: 0;
+  font-size: var(--font-header-3-size);
+  font-weight: var(--font-header-3-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
-.project-card__text p:last-child {
-  margin-bottom: 0;
+.project-card--fireflies .project-card__text,
+.project-card--lens .project-card__text {
+  gap: 14px;
 }
 
 .project-card__visual {
@@ -296,11 +339,11 @@ img {
 }
 
 .project-nav__brand {
-  font-family: "Rock Salt", cursive;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0;
+  font-family: var(--font-family-site-name);
+  font-size: var(--font-body-size);
+  font-weight: var(--font-site-name-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
   text-decoration: none;
   white-space: nowrap;
 }
@@ -344,13 +387,13 @@ img {
 
 .project-nav__current,
 .project-nav__item {
-  font-size: 16px;
-  line-height: normal;
-  letter-spacing: 0;
+  font-size: var(--font-body-size);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .project-nav__current {
-  font-weight: 700;
+  font-weight: var(--font-body-emphasis-weight);
   white-space: nowrap;
 }
 
@@ -362,7 +405,7 @@ img {
   padding: 0;
   border: 0;
   background: transparent;
-  color: #000;
+  color: var(--color-text-primary);
   cursor: pointer;
 }
 
@@ -440,8 +483,8 @@ img {
   display: flex;
   align-items: center;
   padding-left: 24px;
-  color: #000;
-  font-weight: 400;
+  color: var(--color-text-primary);
+  font-weight: var(--font-body-weight);
   text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
@@ -484,7 +527,7 @@ a.project-nav__item {
 .project-nav__item:hover,
 .project-nav__item:focus-visible,
 .project-nav__item[aria-current="page"] {
-  font-weight: 700;
+  font-weight: var(--font-body-emphasis-weight);
   outline: none;
 }
 
@@ -503,10 +546,10 @@ a.project-nav__item {
 .project-title {
   max-width: 920px;
   margin: 0 0 64px;
-  font-size: 64px;
-  font-weight: 500;
-  line-height: normal;
-  letter-spacing: 0;
+  font-size: var(--font-header-1-size);
+  font-weight: var(--font-header-1-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .project-section {
@@ -524,10 +567,10 @@ a.project-nav__item {
 .project-section__title {
   max-width: 720px;
   margin: 0 0 24px;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 0;
+  font-size: var(--font-header-3-size);
+  font-weight: var(--font-header-3-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .project-copy {
@@ -537,14 +580,14 @@ a.project-nav__item {
 
 .project-copy p {
   margin: 0 0 16px;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0;
+  font-size: var(--font-body-size);
+  font-weight: var(--font-body-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .project-copy strong {
-  font-weight: 700;
+  font-weight: var(--font-body-emphasis-weight);
 }
 
 .project-copy p:last-child {
@@ -558,10 +601,10 @@ a.project-nav__item {
 
 .project-copy li {
   margin: 0;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0;
+  font-size: var(--font-body-size);
+  font-weight: var(--font-body-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .project-copy--after-media {
@@ -579,10 +622,10 @@ a.project-nav__item {
 
 .resume-section__title {
   margin: 0 0 24px;
-  font-size: 24px;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 0;
+  font-size: var(--font-header-3-size);
+  font-weight: var(--font-header-3-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .resume-entry + .resume-entry {
@@ -603,30 +646,30 @@ a.project-nav__item {
 .resume-entry__role,
 .resume-education__degree {
   margin: 0;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 0;
+  font-size: var(--font-body-emphasis-size);
+  font-weight: var(--font-body-emphasis-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .resume-entry__location,
 .resume-education__school {
   margin: 0;
-  color: #505050;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0;
+  color: var(--color-text-support);
+  font-size: var(--font-support-size);
+  font-weight: var(--font-support-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .resume-entry__location,
 .resume-entry__date {
   margin: 0;
-  color: #000;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-body-size);
+  font-weight: var(--font-body-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .resume-entry__date {
@@ -646,10 +689,10 @@ a.project-nav__item {
 
 .resume-entry li {
   margin: 0;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0;
+  font-size: var(--font-body-size);
+  font-weight: var(--font-body-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .resume-entry li + li {
@@ -748,18 +791,18 @@ a.project-nav__item {
 .bullet-point h3,
 .bullet-point p {
   margin: 0;
-  font-size: 16px;
-  line-height: normal;
-  letter-spacing: 0;
+  font-size: var(--font-body-size);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .bullet-point h3 {
   margin-bottom: 8px;
-  font-weight: 700;
+  font-weight: var(--font-body-emphasis-weight);
 }
 
 .bullet-point p {
-  font-weight: 400;
+  font-weight: var(--font-body-weight);
 }
 
 .bullet-point p + p {
@@ -787,22 +830,22 @@ a.project-nav__item {
   padding: 10px 12px;
   border-top: 1px solid #d3d3d3;
   border-left: 1px solid #d3d3d3;
-  color: #000;
-  font-size: 16px;
-  line-height: 1.3;
-  letter-spacing: 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-body-size);
+  line-height: var(--font-line-height-table);
+  letter-spacing: var(--font-letter-spacing);
   text-align: left;
   vertical-align: top;
 }
 
 .project-table th {
   background: rgba(0, 0, 0, 0.05);
-  font-weight: 700;
+  font-weight: var(--font-body-emphasis-weight);
 }
 
 .project-table td {
   background: transparent;
-  font-weight: 400;
+  font-weight: var(--font-body-weight);
 }
 
 .project-placeholder {
@@ -833,7 +876,7 @@ a.project-nav__item {
   overflow: hidden;
   border: 1px solid #d3d3d3;
   border-radius: 16px;
-  color: #000;
+  color: var(--color-text-primary);
   text-decoration: none;
   transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 }
@@ -869,20 +912,20 @@ a.project-nav__item {
 .project-bookmark__title,
 .project-bookmark__description {
   display: block;
-  letter-spacing: 0;
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .project-bookmark__site {
-  color: #505050;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: normal;
+  color: var(--color-text-support);
+  font-size: var(--font-support-size);
+  font-weight: var(--font-support-weight);
+  line-height: var(--font-line-height-normal);
 }
 
 .project-bookmark__title {
-  font-size: 16px;
-  font-weight: 700;
-  line-height: normal;
+  font-size: var(--font-body-emphasis-size);
+  font-weight: var(--font-body-emphasis-weight);
+  line-height: var(--font-line-height-normal);
 }
 
 .project-bookmark__description {
@@ -890,9 +933,9 @@ a.project-nav__item {
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: normal;
+  font-size: var(--font-body-size);
+  font-weight: var(--font-body-weight);
+  line-height: var(--font-line-height-normal);
 }
 
 @media (max-width: 1024px) {
@@ -977,6 +1020,13 @@ a.project-nav__item {
 }
 
 @media (max-width: 767px) {
+  :root {
+    --font-site-name-size: 36px;
+    --font-header-1-size: 32px;
+    --font-header-2-size: 24px;
+    --font-header-3-size: 20px;
+  }
+
   .home {
     padding: 48px 16px 96px;
   }
@@ -1009,15 +1059,10 @@ a.project-nav__item {
 
   .site-title {
     margin-bottom: 64px;
-    font-size: 36px;
   }
 
   .intro {
-    gap: 24px;
-  }
-
-  .intro__headline {
-    font-size: 20px;
+    gap: 48px;
   }
 
   .projects__grid {
@@ -1031,10 +1076,6 @@ a.project-nav__item {
 
   .project-card__text {
     padding: 16px 16px 0;
-  }
-
-  .project-card__text h2 {
-    font-size: 20px;
   }
 
   .project-card__visual {
@@ -1056,7 +1097,6 @@ a.project-nav__item {
 
   .project-title {
     margin-bottom: 48px;
-    font-size: 32px;
   }
 
   .project-section {
@@ -1071,16 +1111,8 @@ a.project-nav__item {
     margin-top: 24px;
   }
 
-  .project-section__title {
-    font-size: 20px;
-  }
-
   .resume-section + .resume-section {
     margin-top: 48px;
-  }
-
-  .resume-section__title {
-    font-size: 20px;
   }
 
   .resume-entry__meta {
