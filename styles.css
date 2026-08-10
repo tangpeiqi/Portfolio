@@ -11,19 +11,23 @@ html {
   --font-header-1-weight: 500;
   --font-header-2-size: 48px;
   --font-header-2-weight: 400;
-  --font-header-3-size: 24px;
-  --font-header-3-weight: 700;
+  --font-header-3-size: 32px;
+  --font-header-3-weight: 400;
+  --font-card-body-size: 24px;
+  --font-card-body-weight: 400;
+  --font-card-body-mobile-size: 20px;
   --font-body-size: 16px;
   --font-body-weight: 400;
   --font-body-emphasis-size: 16px;
   --font-body-emphasis-weight: 700;
   --font-support-size: 12px;
   --font-support-weight: 400;
-  --font-button-size: 14px;
+  --font-button-size: var(--font-body-size);
   --font-button-weight: 400;
   --font-line-height-normal: normal;
   --font-line-height-table: 1.3;
   --font-letter-spacing: 0;
+  --space-section: 128px;
   --color-text-primary: #000;
   --color-text-support: #505050;
 }
@@ -60,7 +64,7 @@ img {
 }
 
 .hero {
-  margin-bottom: 64px;
+  margin-bottom: var(--space-section);
 }
 
 .site-title {
@@ -148,7 +152,7 @@ img {
 }
 
 .projects {
-  margin-bottom: 64px;
+  margin-bottom: var(--space-section);
 }
 
 .projects__grid {
@@ -165,9 +169,16 @@ img {
 
 }
 
+@media (min-width: 1025px) {
+  .projects__grid {
+    gap: 48px;
+  }
+}
+
 .project-card {
   --spotlight-x: 50%;
   --spotlight-y: 50%;
+  --card-corner-smoothing: 0.6;
   position: relative;
   height: 600px;
   display: flex;
@@ -175,11 +186,18 @@ img {
   justify-content: flex-start;
   overflow: hidden;
   border: 1px solid #ccc;
-  border-radius: 16px;
+  border-radius: 36px;
+  corner-shape: superellipse(var(--card-corner-smoothing));
   color: var(--color-text-primary);
   text-decoration: none;
   isolation: isolate;
   transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+@media (min-width: 1025px) {
+  .project-card {
+    height: 800px;
+  }
 }
 
 .project-card:not(.project-card--coming-soon)::before,
@@ -246,23 +264,25 @@ img {
 
 .project-card__text p {
   margin: 0;
-  font-size: var(--font-header-3-size);
-  font-weight: var(--font-header-3-weight);
+  font-size: var(--font-card-body-size);
+  font-weight: var(--font-card-body-weight);
   line-height: var(--font-line-height-normal);
   letter-spacing: var(--font-letter-spacing);
 }
 
-.project-card--fireflies .project-card__text,
-.project-card--lens .project-card__text {
-  gap: 14px;
+.project-card__text .project-card__meta {
+  align-self: flex-start;
+  font-size: var(--font-body-size);
+  font-weight: var(--font-body-weight);
+  line-height: 1.4;
+  text-align: left;
 }
 
 .project-card__visual {
   position: relative;
   z-index: 1;
   width: 100%;
-  max-height: 400px;
-  margin-top: auto;
+  margin-top: 0;
   min-height: 0;
   flex: 1 1 0;
   display: flex;
@@ -552,8 +572,23 @@ a.project-nav__item {
   letter-spacing: var(--font-letter-spacing);
 }
 
+.project-title + .project-meta {
+  margin-top: -40px;
+}
+
+.project-meta {
+  width: 100%;
+  max-width: 720px;
+  margin: 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-body-size);
+  font-weight: var(--font-body-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
+}
+
 .project-section {
-  margin-top: 64px;
+  margin-top: var(--space-section);
 }
 
 .project-section--first {
@@ -617,7 +652,7 @@ a.project-nav__item {
 }
 
 .resume-section + .resume-section {
-  margin-top: 64px;
+  margin-top: var(--space-section);
 }
 
 .resume-section__title {
@@ -725,6 +760,16 @@ a.project-nav__item {
   margin-right: -24px;
 }
 
+.project-media--full {
+  width: calc(100% + 48px);
+  margin-right: -24px;
+  margin-left: -24px;
+}
+
+.project-media--video {
+  background: #000;
+}
+
 .project-media--spaced {
   margin-top: 48px;
 }
@@ -784,6 +829,10 @@ a.project-nav__item {
   max-width: 720px;
 }
 
+.bullet-block--three {
+  width: 100%;
+}
+
 .bullet-point {
   flex: 1 1 0;
 }
@@ -807,6 +856,31 @@ a.project-nav__item {
 
 .bullet-point p + p {
   margin-top: 0;
+}
+
+.takeaway-card-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 24px;
+}
+
+.takeaway-card {
+  min-width: 0;
+  height: 100%;
+  padding: 16px;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  background: transparent;
+}
+
+.takeaway-card p {
+  margin: 0;
+  font-size: var(--font-body-size);
+  font-weight: var(--font-body-weight);
+  line-height: var(--font-line-height-normal);
+  letter-spacing: var(--font-letter-spacing);
 }
 
 .project-table-wrap {
@@ -939,6 +1013,12 @@ a.project-nav__item {
 }
 
 @media (max-width: 1024px) {
+  :root {
+    --font-header-3-size: 20px;
+    --font-header-3-weight: 500;
+    --font-card-body-size: var(--font-card-body-mobile-size);
+  }
+
   .home {
     padding-right: 24px;
     padding-left: 24px;
@@ -1007,6 +1087,10 @@ a.project-nav__item {
     grid-row: auto;
   }
 
+  .takeaway-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .site-title {
     margin-right: 0;
     margin-bottom: 88px;
@@ -1025,6 +1109,9 @@ a.project-nav__item {
     --font-header-1-size: 32px;
     --font-header-2-size: 24px;
     --font-header-3-size: 20px;
+    --font-header-3-weight: 500;
+    --font-card-body-size: var(--font-card-body-mobile-size);
+    --space-section: 48px;
   }
 
   .home {
@@ -1052,11 +1139,6 @@ a.project-nav__item {
     white-space: normal;
   }
 
-  .hero,
-  .projects {
-    margin-bottom: 48px;
-  }
-
   .site-title {
     margin-bottom: 64px;
   }
@@ -1071,7 +1153,6 @@ a.project-nav__item {
 
   .project-card {
     height: 560px;
-    border-radius: 16px;
   }
 
   .project-card__text {
@@ -1099,8 +1180,8 @@ a.project-nav__item {
     margin-bottom: 48px;
   }
 
-  .project-section {
-    margin-top: 48px;
+  .project-title + .project-meta {
+    margin-top: -24px;
   }
 
   .project-section--first {
@@ -1109,10 +1190,6 @@ a.project-nav__item {
 
   .project-section--overview {
     margin-top: 24px;
-  }
-
-  .resume-section + .resume-section {
-    margin-top: 48px;
   }
 
   .resume-entry__meta {
@@ -1148,9 +1225,19 @@ a.project-nav__item {
     padding-left: 16px;
   }
 
+  .project-media--full {
+    width: calc(100% + 32px);
+    margin-right: -16px;
+    margin-left: -16px;
+  }
+
   .bullet-block {
     flex-direction: column;
     gap: 24px;
+  }
+
+  .takeaway-card-grid {
+    grid-template-columns: 1fr;
   }
 
   .project-bookmark {

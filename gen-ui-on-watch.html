@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Gen UI on Watch - Peiqi Tang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Rock+Salt&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=202608101430">
+</head>
+<body id="top">
+  <header class="project-nav" aria-label="Portfolio navigation" data-current-project="Gen UI on Watch">
+    <div class="project-nav__bar">
+      <a class="project-nav__brand" href="index.html">Peiqi&nbsp;&nbsp;Tang</a>
+      <div class="project-nav__crumb" aria-hidden="true">
+        <span class="project-nav__separator"></span>
+        <span class="project-nav__current">Gen UI on Watch</span>
+      </div>
+      <button class="project-nav__toggle" type="button" aria-label="Open project menu" aria-expanded="false" aria-controls="project-menu">
+        <span class="project-nav__toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    <nav id="project-menu" class="project-nav__menu" aria-label="Projects">
+      <a class="project-nav__item" href="babycare.html">BabyCare: A Wearable Agent</a>
+      <a class="project-nav__item" href="os-for-agents.html">OS for Agents</a>
+      <span class="project-nav__item" aria-current="page">Gen UI on Watch</span>
+      <a class="project-nav__item" href="project-at-meta.html">Projects at Meta</a>
+      <a class="project-nav__item" href="fireflies.html">Fireflies, A Visual Language for Visual Search</a>
+      <a class="project-nav__item" href="amazon-lens.html">Amazon Lens</a>
+    </nav>
+  </header>
+
+  <main class="project-page">
+    <div class="project-container">
+      <h1 class="project-title">Gen UI on Watch</h1>
+      <p class="project-meta">Personal project · 2026 Q2</p>
+
+      <section class="project-section project-section--overview" aria-labelledby="manual-title">
+        <h2 id="manual-title" class="project-section__title">Manual configuration can't keep up with the ever changing life</h2>
+        <div class="project-copy">
+          <p>The endless scenarios we run into require endless watch faces that we cannot produce in the traditional way.</p>
+        </div>
+        <figure class="project-media project-media--text project-media--after-copy">
+          <img src="assets/Gen UI on Watch/Watch Face Config on Phone.png" width="1390" height="886" alt="Three iPhone screens showing manual Apple Watch face configuration for color, complications, and complication choices.">
+        </figure>
+      </section>
+
+      <section class="project-section" aria-labelledby="context-title">
+        <h2 id="context-title" class="project-section__title">Context based generated watch faces throughout your day</h2>
+        <div class="project-copy">
+          <p>Taking into your past and current context, an AI agent has the potential to generate in real time a watch face that brings you the right info at the right time. So I built a prototype webpage that allows users to enter simple context, hit a button and get an AI generated watch face.</p>
+        </div>
+        <figure class="project-media project-media--full project-media--video project-media--after-copy">
+          <iframe
+            id="gen-ui-demo-video"
+            data-video-id="TNxK8UfTO-g"
+            width="1200"
+            height="675"
+            title="Gen UI on Watch prototype demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </figure>
+      </section>
+
+      <section class="project-section" aria-labelledby="agency-title">
+        <h2 id="agency-title" class="project-section__title">A dance on the agency spectrum</h2>
+        <div class="project-copy">
+          <p>In this project, in order to help AI decide what to show on the watch face and how to design the UI, I created 3 types of local files for AI to reference.</p>
+        </div>
+
+        <div class="bullet-block bullet-block--three">
+          <div class="bullet-point">
+            <h3>Broader context</h3>
+            <p>Because the prototype is in a "sandbox" environment, I created synthetic context for the model to understand what's going on broadly.</p>
+          </div>
+          <div class="bullet-point">
+            <h3>Content types</h3>
+            <p>Categorize the type of content we can show on the watch, and their related metadata.</p>
+          </div>
+          <div class="bullet-point">
+            <h3>Design guidelines</h3>
+            <p>Include atomic components, font styles, colors and instructions on layouts.</p>
+          </div>
+        </div>
+
+        <figure class="project-media project-media--transparent project-media--spaced">
+          <img src="assets/Gen UI on Watch/GenUI Pipeline.png" width="1691" height="1188" alt="Pipeline diagram showing current context entering a webpage simulator, an AI model decision layer, local files for broader context, content types, and design guidelines, then outputting a rendered watch face.">
+        </figure>
+
+        <div class="project-copy project-copy--after-media">
+          <p>How much guidance should I give the AI model when it creates a watch face? If I force it to choose from one of the provided templates, the template list has to be very inclusive and exhaustive, which is hard to achieve and even harder to maintain long term. But if I give the AI too much freedom, it will mis-use the components and create layouts that don't look good.</p>
+        </div>
+
+        <figure class="project-media project-media--transparent project-media--after-copy">
+          <img src="assets/Gen UI on Watch/Agency Spectrum.png" width="1727" height="410" alt="Agency spectrum diagram showing stricter templates on one end, full agency on the other, and watch face layout in the middle.">
+        </figure>
+
+        <div class="project-copy project-copy--after-media">
+          <p>I thought I would position my project somewhere in the middle, maybe slightly towards more freedom and agency. However, I figured out the AI's creative capabilities are not evenly distributed across different aspects of the UI. AI can perform well on some decisions while struggling on others.</p>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="takeaways-title">
+        <h2 id="takeaways-title" class="project-section__title">Takeaways</h2>
+        <div class="takeaway-card-grid">
+          <article class="takeaway-card">
+            <p>It takes practice to find the best way to construct layout guidelines to agents. And the learnings may not sustain another model upgrade.</p>
+          </article>
+          <article class="takeaway-card">
+            <p>Creating what makes you YOU still takes time even with more powerful AIs in the future.</p>
+          </article>
+          <article class="takeaway-card">
+            <p>Make your design guideline/system agent friendly.</p>
+          </article>
+          <article class="takeaway-card">
+            <p>People will always want some stability and predictability on UIs.</p>
+          </article>
+        </div>
+      </section>
+
+      <a class="button back-to-top" href="#top">Back to top</a>
+    </div>
+  </main>
+  <script>
+    const projectNav = document.querySelector(".project-nav");
+    const navToggle = document.querySelector(".project-nav__toggle");
+    const projectTitle = document.querySelector(".project-title");
+
+    const syncProjectNav = () => {
+      if (!projectNav || !projectTitle) {
+        return;
+      }
+
+      projectNav.classList.toggle("project-nav--scrolled", projectTitle.getBoundingClientRect().bottom <= 0);
+    };
+
+    navToggle?.addEventListener("click", () => {
+      const isOpen = projectNav.classList.toggle("project-nav--open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Close project menu" : "Open project menu");
+    });
+
+    window.addEventListener("scroll", syncProjectNav, { passive: true });
+    window.addEventListener("resize", syncProjectNav);
+    syncProjectNav();
+
+    const demoVideo = document.getElementById("gen-ui-demo-video");
+
+    const loadDemoVideo = () => {
+      if (!demoVideo || demoVideo.src) {
+        return;
+      }
+
+      const videoId = demoVideo.dataset.videoId;
+      const demoVideoParams = new URLSearchParams({
+        autoplay: "1",
+        mute: "1",
+        loop: "1",
+        playlist: videoId,
+        playsinline: "1",
+        rel: "0"
+      });
+
+      demoVideo.src = `https://www.youtube.com/embed/${videoId}?${demoVideoParams.toString()}`;
+    };
+
+    if (demoVideo) {
+      const syncDemoVideo = () => {
+        if (demoVideo.getBoundingClientRect().top <= window.innerHeight) {
+          loadDemoVideo();
+          window.removeEventListener("scroll", syncDemoVideo);
+          window.removeEventListener("resize", syncDemoVideo);
+        }
+      };
+
+      window.addEventListener("scroll", syncDemoVideo, { passive: true });
+      window.addEventListener("resize", syncDemoVideo);
+      syncDemoVideo();
+    }
+  </script>
+</body>
+</html>
