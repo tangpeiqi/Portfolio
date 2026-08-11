@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Rock+Salt&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=202608101430">
+  <link rel="stylesheet" href="styles.css?v=202608111245">
 </head>
 <body id="top">
   <header class="project-nav" aria-label="Portfolio navigation" data-current-project="BabyCare: A Wearable Agent">
@@ -35,53 +35,106 @@
   <main class="project-page">
     <div class="project-container">
       <h1 class="project-title">BabyCare: A Wearable Agent</h1>
+      <p class="project-meta">Personal project · 2026 Q1</p>
 
-      <figure class="project-media project-media--opaque project-media--hero">
-        <iframe
-          id="babycare-video"
-          data-video-id="H8Iehch-T74"
-          data-video-token="jxYoSdTHy6B1y3wd"
-          width="1152"
-          height="648"
-          title="BabyCare: A Wearable Agent video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen></iframe>
-      </figure>
+      <section class="project-section project-section--overview" aria-labelledby="overview-title">
+        <div class="text-image-block text-image-block--image-text text-image-block--hero">
+          <figure class="text-image-block__media text-image-block__media--image">
+            <img src="assets/BabyCare/Hero Image.png" width="3934" height="2950" alt="Parent wearing Ray-Ban Meta glasses feeding a newborn with a BabyCare activity label overlay.">
+          </figure>
+          <div class="text-image-block__text">
+            <h2 id="overview-title">Automate baby activity logging with an agent created for your AI glasses.</h2>
+            <div class="text-image-block__copy">
+              <p>I built a prototype agent that uses Ray-Ban Meta glasses to get context (image and audio) about the baby activity, then creates an activity timeline and shows insights on your mobile phone.</p>
+            </div>
+            <div class="text-image-block__actions">
+              <a class="button" href="https://github.com/tangpeiqi/BabyCare" target="_blank" rel="noopener noreferrer">Go to GitHub Repo</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <section class="project-section project-section--overview" aria-label="Overview">
+      <section class="project-section" aria-labelledby="traditional-title">
+        <div class="text-image-block text-image-block--text-image">
+          <div class="text-image-block__text">
+            <h2 id="traditional-title">Traditionally</h2>
+            <div class="text-image-block__copy">
+              <p>You would have to use a mobile app like <a href="https://huckleberrycare.com/" target="_blank" rel="noopener noreferrer">Huckleberry</a>, or <a href="https://www.whattoexpect.com/mobile-app/" target="_blank" rel="noopener noreferrer">What to Expect</a>, to manually log every activity into the app. It is easy to forget, creates cognitive pressure and takes precious time out of the already over-loaded new parents.</p>
+            </div>
+          </div>
+          <figure class="text-image-block__media project-media project-media--video">
+            <iframe
+              class="youtube-embed"
+              data-video-id="ffl-E_0WSYQ"
+              data-autoplay-on-view="true"
+              width="700"
+              height="394"
+              title="Traditional baby activity logging demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+          </figure>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="agent-title">
+        <h2 id="agent-title" class="project-section__title">With this agent</h2>
         <div class="project-copy">
-          <p>Baby activity logging made easy with an agent created for your AI glasses.</p>
-          <p>I built a prototype agent that uses Ray-Ban Meta glasses to get context (image and audio) about the baby activity, then creates an activity timeline and shows insights on your mobile phone.</p>
-          <p><strong>Traditionally:</strong> You would have to use a mobile app like Huckleberry, or What to Expect, to manually log everything into the app, from diaper change, poop color, sleep schedule to food consumption. You have to remind yourself to find time to log the activities afterwards. It creates cognitive pressure and takes precious time out of the already over-loaded new parents.</p>
-          <p><strong>With this agent:</strong> You can just tap on the RBM to capture some context (a few images of what you are doing or a few words from you) and have the AI agent figure out what to note down, then organize the info into easily consumable data for you. It takes all the manual work out of your plate so you can focus on what actually matters - taking care of the new born.</p>
+          <p>You can just tap on the RBM to capture some context (a few images of what you are doing or a few words from you) and have the AI agent figure out what to note down, then organize the info into easily consumable data for you. It takes all the manual work out of your plate so you can focus on what actually matters - taking care of the new born.</p>
         </div>
-
-        <a class="button" href="https://github.com/tangpeiqi/BabyCare" target="_blank" rel="noopener noreferrer">Go to GitHub Repo</a>
+        <figure class="project-media project-media--full project-media--video project-media--after-copy">
+          <iframe
+            class="youtube-embed"
+            data-video-id="D4XZC1MQ8qQ"
+            data-autoplay-on-view="true"
+            width="1200"
+            height="675"
+            title="BabyCare agent activity logging demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </figure>
       </section>
 
-      <section class="project-section" aria-labelledby="vision-title">
-        <h2 id="vision-title" class="project-section__title">Vision</h2>
-        <div class="bullet-block bullet-block--two">
-          <div class="bullet-point">
-            <h3>Get rid of apps</h3>
-            <p>I want to prove the idea that we can replace some, if not most of the apps we use today on a phone with agents on wearables. Let wearable agents be the fabrics to weave our physical and digital lives together.</p>
-          </div>
-          <div class="bullet-point">
-            <h3>Reduce friction of interaction</h3>
-            <p>This is a proof of life of a wearable agent experience that shows a path towards frictionless interaction when we have multimodal input plus context.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="project-section" aria-labelledby="flow-title">
-        <h2 id="flow-title" class="project-section__title">Experience Flow</h2>
+      <section class="project-section" aria-label="BabyCare flow and app UI">
         <figure class="project-media project-media--transparent">
-          <img src="assets/BabyCare/Flow.png" alt="Five-step BabyCare experience flow from connecting glasses and phone through tapping, activity capture, cloud processing, and logged results.">
+          <img src="assets/BabyCare/Flow.png" width="2400" height="490" alt="Five-step BabyCare experience flow from connecting glasses and phone through tapping, activity capture, cloud processing, and logged results.">
         </figure>
-        <figure class="project-media project-media--opaque project-media--spaced">
-          <img src="assets/BabyCare/BabyCare UI.png" alt="Three BabyCare mobile app screens showing summary, activity timeline, and settings.">
+        <figure class="project-media project-media--opaque project-media--section-spaced">
+          <img src="assets/BabyCare/BabyCare UI.png" width="2764" height="1780" alt="Three BabyCare mobile app screens showing summary, activity timeline, and settings.">
         </figure>
+      </section>
+
+      <section class="project-section" aria-labelledby="privacy-title">
+        <div class="text-image-block text-image-block--text-image">
+          <div class="text-image-block__text">
+            <h2 id="privacy-title">Privacy considerations</h2>
+            <div class="bullet-block bullet-block--one">
+              <div class="bullet-point">
+                <h3>You are always in control</h3>
+                <p>Initiating and stopping the capture process is user-controlled with a simple tap. A single tap on the temple arm begins capturing, and a subsequent tap concludes the capture. If you accidentally started the session or if sensitive information is involved, you can always stop and discard it by tapping the cancel button on the phone. Data from that session won't be sent to the AI model.</p>
+              </div>
+            </div>
+            <div class="bullet-block bullet-block--one">
+              <div class="bullet-point">
+                <h3>Async catch up</h3>
+                <p>If you need to log an activity later—perhaps for a private moment or because you forgot to log it earlier—you can still tap the glasses and verbally provide an update. The audio inference will take over image inference and the agent will be able to log the activity based on what you told it instead of what it sees.</p>
+              </div>
+            </div>
+          </div>
+          <figure class="text-image-block__media project-media project-media--video">
+            <iframe
+              class="youtube-embed"
+              data-video-id="L_wtn7QzY9o"
+              data-autoplay-on-view="true"
+              width="700"
+              height="394"
+              title="BabyCare privacy and async catch up demo"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen></iframe>
+          </figure>
+        </div>
       </section>
 
       <section class="project-section" aria-labelledby="pipeline-title">
@@ -90,29 +143,26 @@
           <p>A response from an AI model could be slow and expensive if we do not design the pipeline properly. In the case of BabyCare, sometimes we don't even need fancy AI to categorize activities. Staging and sequencing the request smartly can save both token and time.</p>
         </div>
         <figure class="project-media project-media--transparent project-media--after-copy">
-          <img src="assets/BabyCare/Inference Pipeline.png" alt="BabyCare inference pipeline showing local heuristics, audio inference, image inference, and activity logging stages.">
+          <img src="assets/BabyCare/Inference Pipeline.png" width="3596" height="996" alt="BabyCare inference pipeline showing local heuristics, audio inference, image inference, and activity logging stages.">
         </figure>
-      </section>
-
-      <section class="project-section" aria-labelledby="privacy-title">
-        <h2 id="privacy-title" class="project-section__title">Privacy considerations</h2>
-        <div class="bullet-block bullet-block--two">
-          <div class="bullet-point">
-            <h3>You are always in control</h3>
-            <p>Initiating and stopping the capture process is user-controlled with a simple tap. A single tap on the temple arm begins capturing, and a subsequent tap concludes the capture. If you accidentally started the session or if sensitive information is involved, you can always stop and discard it by tapping the cancel button on the phone. Data from that session won't be sent to the AI model.</p>
-          </div>
-          <div class="bullet-point">
-            <h3>Async catch up</h3>
-            <p>If you need to log an activity later, perhaps for a private moment or because you forgot to log it earlier, you can still tap the glasses and verbally provide an update. The audio inference will take over image inference and the agent will be able to log the activity based on what you told it instead of what it sees.</p>
-          </div>
-        </div>
       </section>
 
       <section class="project-section" aria-labelledby="next-title">
         <h2 id="next-title" class="project-section__title">Next Steps: Revisit for future SDKs</h2>
         <div class="project-copy">
-          <p>Currently the SDK (V0.6) doesn't expose the capture button on the glasses. Starting/stopping streaming and capturing a photo can only be done via a GUI button on the app. This creates extra friction for the beginning and the end of the experience because users have to touch the phone before controlling the glasses. Once the Meta wearable SDK opens up for more hardware interactions, I will come back to improve the interaction and reduce the friction to use this agent.</p>
+          <p>Currently the SDK (V0.5) doesn't expose the capture button on the glasses. Starting/stopping streaming and capturing a photo can only be done via a GUI button on the app. This creates extra friction for the beginning and the end of the experience because users have to touch the phone before controlling the glasses. Once the Meta wearable SDK opens up for more hardware interactions, I will come back to improve the interaction and reduce the friction to use this agent.</p>
         </div>
+        <figure class="project-media project-media--opaque project-media--video project-media--after-copy">
+          <iframe
+            class="youtube-embed"
+            data-video-id="H8Iehch-T74"
+            width="1200"
+            height="675"
+            title="BabyCare future SDK capture button demo"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </figure>
       </section>
 
       <section class="project-section" aria-labelledby="picture-title">
@@ -120,6 +170,16 @@
         <div class="project-copy">
           <p>I'm not a developer and this prototype took me and my AI partner a few weeks to build. However I can see a future where such agents could be built much simpler and faster. However niche my need is, there will be an agent perfect for the job.</p>
           <p>Instead of apps, if we have multiple agents on our wearables in the future, how would they be organized differently than the world of apps we live in today? I wrote up a short article about the relationship between user, agent and OS. I hope it will spark more discussion on this topic.</p>
+        </div>
+        <div class="project-bookmarks" aria-label="Related project link">
+          <a class="project-bookmark" href="os-for-agents.html">
+            <img class="project-bookmark__image" src="assets/Home Page/OS for Agents Card.png" width="1600" height="900" alt="">
+            <span class="project-bookmark__body">
+              <span class="project-bookmark__site">Project page</span>
+              <span class="project-bookmark__title">OS for Agents</span>
+              <span class="project-bookmark__description">A short article about the relationship model between users, OS, and agents on wearables.</span>
+            </span>
+          </a>
         </div>
       </section>
 
@@ -149,37 +209,60 @@
     window.addEventListener("resize", syncProjectNav);
     syncProjectNav();
 
-    const babycareVideo = document.getElementById("babycare-video");
-    const babycareVideoId = babycareVideo.dataset.videoId;
-    const babycareVideoParams = new URLSearchParams({
-      si: babycareVideo.dataset.videoToken,
-      enablejsapi: "1",
-      loop: "1",
-      playlist: babycareVideoId,
-      playsinline: "1",
-      rel: "0"
+    const loadYoutubeEmbed = (embed, shouldAutoplay = false) => {
+      const videoId = embed.dataset.videoId;
+      const videoParams = new URLSearchParams({
+        playsinline: "1",
+        rel: "0"
+      });
+
+      if (shouldAutoplay) {
+        videoParams.set("autoplay", "1");
+        videoParams.set("mute", "1");
+        videoParams.set("loop", "1");
+        videoParams.set("playlist", videoId);
+      }
+
+      if (window.location.protocol !== "file:" && window.location.origin !== "null") {
+        videoParams.set("origin", window.location.origin);
+      }
+
+      embed.src = `https://www.youtube.com/embed/${videoId}?${videoParams.toString()}`;
+    };
+
+    document.querySelectorAll(".youtube-embed").forEach((embed) => {
+      if (embed.dataset.autoplayOnView === "true") {
+        return;
+      }
+
+      loadYoutubeEmbed(embed);
     });
 
-    if (window.location.origin !== "null") {
-      babycareVideoParams.set("origin", window.location.origin);
-    }
+    const autoplayEmbeds = document.querySelectorAll('.youtube-embed[data-autoplay-on-view="true"]');
 
-    babycareVideo.src = `https://www.youtube.com/embed/${babycareVideoId}?${babycareVideoParams.toString()}`;
-  </script>
-  <script src="https://www.youtube.com/iframe_api"></script>
-  <script>
-    let babycareVideoPlayer;
-
-    function onYouTubeIframeAPIReady() {
-      babycareVideoPlayer = new YT.Player("babycare-video", {
-        events: {
-          onStateChange: function (event) {
-            if (event.data === YT.PlayerState.ENDED) {
-              event.target.seekTo(0);
-            }
+    if ("IntersectionObserver" in window) {
+      const autoplayObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !entry.target.src) {
+            loadYoutubeEmbed(entry.target, true);
+            autoplayObserver.unobserve(entry.target);
           }
-        }
-      });
+        });
+      }, { threshold: 0 });
+
+      autoplayEmbeds.forEach((embed) => autoplayObserver.observe(embed));
+    } else {
+      const syncAutoplayVideos = () => {
+        autoplayEmbeds.forEach((embed) => {
+          if (!embed.src && embed.getBoundingClientRect().top <= window.innerHeight) {
+            loadYoutubeEmbed(embed, true);
+          }
+        });
+      };
+
+      window.addEventListener("scroll", syncAutoplayVideos, { passive: true });
+      window.addEventListener("resize", syncAutoplayVideos);
+      syncAutoplayVideos();
     }
   </script>
 </body>
