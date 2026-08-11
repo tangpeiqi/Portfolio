@@ -178,7 +178,6 @@ img {
 .project-card {
   --spotlight-x: 50%;
   --spotlight-y: 50%;
-  --card-corner-smoothing: 0.6;
   position: relative;
   height: 600px;
   display: flex;
@@ -187,7 +186,6 @@ img {
   overflow: hidden;
   border: 1px solid #ccc;
   border-radius: 36px;
-  corner-shape: superellipse(var(--card-corner-smoothing));
   color: var(--color-text-primary);
   text-decoration: none;
   isolation: isolate;
@@ -787,6 +785,12 @@ a.project-nav__item {
   border-radius: 16px;
   corner-shape: superellipse(var(--media-corner-smoothing));
   overflow: hidden;
+  clip-path: inset(0 round 16px);
+}
+
+.project-media--rounded iframe {
+  border-radius: inherit;
+  corner-shape: inherit;
   clip-path: inset(0 round 16px);
 }
 
