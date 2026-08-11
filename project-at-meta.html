@@ -22,9 +22,9 @@
       </button>
     </div>
     <nav id="project-menu" class="project-nav__menu" aria-label="Projects">
+      <a class="project-nav__item" href="gen-ui-on-watch.html">Gen UI on Watch</a>
       <a class="project-nav__item" href="babycare.html">BabyCare: A Wearable Agent</a>
       <a class="project-nav__item" href="os-for-agents.html">OS for Agents</a>
-      <a class="project-nav__item" href="gen-ui-on-watch.html">Gen UI on Watch</a>
       <span class="project-nav__item" aria-current="page">Projects at Meta</span>
       <a class="project-nav__item" href="fireflies.html">Fireflies, A Visual Language for Visual Search</a>
       <a class="project-nav__item" href="amazon-lens.html">Amazon Lens</a>
@@ -35,30 +35,76 @@
     <div class="project-container">
       <h1 class="project-title">Projects at Meta</h1>
 
-      <section class="project-section project-section--first" aria-label="Overview">
+      <section class="project-section project-section--first" aria-labelledby="lab-setup-title">
         <div class="project-copy">
-          <p><strong>2020 - 2026</strong></p>
+          <p>Meta · 2020-2026</p>
+        </div>
+
+        <h2 id="lab-setup-title" class="project-section__title">The Lab Setup</h2>
+
+        <div class="project-copy">
           <p>Our research org within Reality Labs is composed of designers &amp; prototypes, research scientists, material scientists, hardware, firmware and software engineers. We explore and develop cutting edge technologies, devices and experiences, with the goal of transferring mature concepts to product teams for further development, ultimately bringing them to millions of users.</p>
         </div>
 
-        <figure class="project-media project-media--text">
-          <img src="assets/Projects at Meta/Wrist platform.png" width="711" height="400" alt="Research prototype wrist wearable on a person's arm.">
+        <figure class="project-media project-media--full project-media--video project-media--rounded project-media--after-copy project-media--autoplay">
+          <iframe
+            width="1152"
+            height="648"
+            data-video-id="GakDa7IQt5o"
+            data-video-token="OqsGXJYt83famSI7"
+            title="Inside Reality Labs video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
         </figure>
+      </section>
 
-        <div class="project-copy project-copy--after-media">
+      <section class="project-section" aria-labelledby="wearable-constellations-title">
+        <h2 id="wearable-constellations-title" class="project-section__title">AI Wearable Constellations</h2>
+
+        <div class="project-copy">
           <p>In the past 3 years I've been focusing on creating proactive agent experiences on AI wearables with sensors beyond microphones and cameras. With the constellation of wearables, users would be able to leverage a wide range of signals to communicate their intent to AI from implicit signals like hand pose, body pose, eye and head gaze, to explicit ones like voice and gestures. And the AI can rely on not just the display but also audio and haptics to deliver info to users.</p>
         </div>
 
-        <figure class="project-media project-media--text">
-          <img src="assets/Projects at Meta/10yr vision.png" width="711" height="400" alt="Research prototype scene showing spatial blue interface elements in a physical room.">
+        <figure class="project-media project-media--full project-media--video project-media--rounded project-media--after-copy project-media--autoplay">
+          <iframe
+            width="1152"
+            height="648"
+            data-video-id="_4nN-3oQdKc"
+            title="AI wearable constellations video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
         </figure>
+      </section>
 
-        <div class="project-copy project-copy--after-media">
+      <section class="project-section" aria-labelledby="future-shell-models-title">
+        <h2 id="future-shell-models-title" class="project-section__title">Future Shell Models</h2>
+
+        <div class="project-copy">
           <p>Before working on the specific wearables, I spent my first 2 years at the company creating shell experiences for future AR devices with nondeterministic inputs and outputs. The shell models focused on leveraging user behavior and environmental context at the moment to surface the correct info, and utilizing geometric understanding of the surrounding space to organize UI.</p>
+        </div>
+
+        <figure class="project-media project-media--full project-media--video project-media--rounded project-media--after-copy project-media--autoplay">
+          <iframe
+            width="1152"
+            height="648"
+            data-video-id="mcDo1wAcaR8"
+            title="Future shell models video"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </figure>
+      </section>
+
+      <section class="project-section" aria-labelledby="data-collections-title">
+        <h2 id="data-collections-title" class="project-section__title">Data Collections</h2>
+
+        <div class="project-copy">
           <p>Occasionally, I designed work flows and experiences on hardware prototypes for both supervised and unsupervised data collection activities to help collect data for research and model development.</p>
         </div>
 
-        <div class="project-bookmarks" aria-label="Related Meta research links">
+        <div class="project-bookmarks project-bookmarks--section-spaced" aria-label="Related Meta research links">
           <a class="project-bookmark" href="https://tech.facebook.com/reality-labs/2021/3/inside-facebook-reality-labs-the-next-era-of-human-computer-interaction/" target="_blank" rel="noopener noreferrer">
             <img class="project-bookmark__image" src="assets/Projects at Meta/Bookmarks/hci.png" width="604" height="451" alt="">
             <span class="project-bookmark__body">
@@ -113,6 +159,85 @@
     window.addEventListener("scroll", syncProjectNav, { passive: true });
     window.addEventListener("resize", syncProjectNav);
     syncProjectNav();
+
+    const metaAutoplayVideoFrames = document.querySelectorAll(".project-media--autoplay iframe");
+
+    const sendYouTubeCommand = (iframe, func) => {
+      iframe.contentWindow?.postMessage(JSON.stringify({
+        event: "command",
+        func,
+        args: []
+      }), "https://www.youtube.com");
+    };
+
+    const setAutoplayVideoSource = (iframe) => {
+      const videoId = iframe.dataset.videoId;
+
+      if (!videoId) {
+        return;
+      }
+
+      const params = new URLSearchParams({
+        enablejsapi: "1",
+        loop: "1",
+        mute: "1",
+        playlist: videoId,
+        playsinline: "1",
+        rel: "0"
+      });
+
+      if (iframe.dataset.videoToken) {
+        params.set("si", iframe.dataset.videoToken);
+      }
+
+      if (window.location.origin !== "null") {
+        params.set("origin", window.location.origin);
+      }
+
+      iframe.src = `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
+    };
+
+    const updateAutoplayVideos = () => {
+      metaAutoplayVideoFrames.forEach((iframe) => {
+        const media = iframe.closest(".project-media--autoplay");
+
+        if (!media) {
+          return;
+        }
+
+        const rect = media.getBoundingClientRect();
+        const shouldPlay = rect.top <= window.innerHeight && rect.bottom > 0;
+        const nextState = shouldPlay ? "playing" : "paused";
+
+        if (iframe.dataset.autoplayState === nextState) {
+          return;
+        }
+
+        iframe.dataset.autoplayState = nextState;
+
+        if (shouldPlay) {
+          sendYouTubeCommand(iframe, "mute");
+          sendYouTubeCommand(iframe, "playVideo");
+        } else {
+          sendYouTubeCommand(iframe, "pauseVideo");
+        }
+      });
+    };
+
+    metaAutoplayVideoFrames.forEach((iframe) => {
+      setAutoplayVideoSource(iframe);
+      iframe.addEventListener("load", () => {
+        iframe.dataset.autoplayState = "";
+        updateAutoplayVideos();
+      });
+    });
+
+    if (metaAutoplayVideoFrames.length) {
+      window.addEventListener("scroll", updateAutoplayVideos, { passive: true });
+      window.addEventListener("resize", updateAutoplayVideos);
+      window.addEventListener("load", updateAutoplayVideos);
+      updateAutoplayVideos();
+    }
   </script>
 </body>
 </html>

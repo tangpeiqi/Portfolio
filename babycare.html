@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Rock+Salt&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=202608111245">
+  <link rel="stylesheet" href="styles.css?v=202608111310">
 </head>
 <body id="top">
   <header class="project-nav" aria-label="Portfolio navigation" data-current-project="BabyCare: A Wearable Agent">
@@ -23,9 +23,9 @@
       </button>
     </div>
     <nav id="project-menu" class="project-nav__menu" aria-label="Projects">
+      <a class="project-nav__item" href="gen-ui-on-watch.html">Gen UI on Watch</a>
       <span class="project-nav__item" aria-current="page">BabyCare: A Wearable Agent</span>
       <a class="project-nav__item" href="os-for-agents.html">OS for Agents</a>
-      <a class="project-nav__item" href="gen-ui-on-watch.html">Gen UI on Watch</a>
       <a class="project-nav__item" href="project-at-meta.html">Projects at Meta</a>
       <a class="project-nav__item" href="fireflies.html">Fireflies, A Visual Language for Visual Search</a>
       <a class="project-nav__item" href="amazon-lens.html">Amazon Lens</a>
@@ -38,19 +38,15 @@
       <p class="project-meta">Personal project · 2026 Q1</p>
 
       <section class="project-section project-section--overview" aria-labelledby="overview-title">
-        <div class="text-image-block text-image-block--image-text text-image-block--hero">
-          <figure class="text-image-block__media text-image-block__media--image">
-            <img src="assets/BabyCare/Hero Image.png" width="3934" height="2950" alt="Parent wearing Ray-Ban Meta glasses feeding a newborn with a BabyCare activity label overlay.">
-          </figure>
-          <div class="text-image-block__text">
-            <h2 id="overview-title">Automate baby activity logging with an agent created for your AI glasses.</h2>
-            <div class="text-image-block__copy">
-              <p>I built a prototype agent that uses Ray-Ban Meta glasses to get context (image and audio) about the baby activity, then creates an activity timeline and shows insights on your mobile phone.</p>
-            </div>
-            <div class="text-image-block__actions">
-              <a class="button" href="https://github.com/tangpeiqi/BabyCare" target="_blank" rel="noopener noreferrer">Go to GitHub Repo</a>
-            </div>
-          </div>
+        <figure class="project-media project-media--full project-media--hero project-media--rounded">
+          <img src="assets/BabyCare/Hero Image.png" width="3934" height="2950" alt="Parent wearing Ray-Ban Meta glasses feeding a newborn with a BabyCare activity label overlay.">
+        </figure>
+        <h2 id="overview-title" class="project-section__title">Automate baby activity logging with an agent created for your AI glasses.</h2>
+        <div class="project-copy">
+          <p>I built a prototype agent that uses Ray-Ban Meta glasses to get context (image and audio) about the baby activity, then creates an activity timeline and shows insights on your mobile phone.</p>
+        </div>
+        <div class="project-section__actions">
+          <a class="button" href="https://github.com/tangpeiqi/BabyCare" target="_blank" rel="noopener noreferrer">Go to GitHub Repo</a>
         </div>
       </section>
 
@@ -62,7 +58,7 @@
               <p>You would have to use a mobile app like <a href="https://huckleberrycare.com/" target="_blank" rel="noopener noreferrer">Huckleberry</a>, or <a href="https://www.whattoexpect.com/mobile-app/" target="_blank" rel="noopener noreferrer">What to Expect</a>, to manually log every activity into the app. It is easy to forget, creates cognitive pressure and takes precious time out of the already over-loaded new parents.</p>
             </div>
           </div>
-          <figure class="text-image-block__media project-media project-media--video">
+          <figure class="text-image-block__media project-media project-media--video project-media--rounded">
             <iframe
               class="youtube-embed"
               data-video-id="ffl-E_0WSYQ"
@@ -82,7 +78,7 @@
         <div class="project-copy">
           <p>You can just tap on the RBM to capture some context (a few images of what you are doing or a few words from you) and have the AI agent figure out what to note down, then organize the info into easily consumable data for you. It takes all the manual work out of your plate so you can focus on what actually matters - taking care of the new born.</p>
         </div>
-        <figure class="project-media project-media--full project-media--video project-media--after-copy">
+        <figure class="project-media project-media--full project-media--video project-media--after-copy project-media--rounded">
           <iframe
             class="youtube-embed"
             data-video-id="D4XZC1MQ8qQ"
@@ -122,7 +118,7 @@
               </div>
             </div>
           </div>
-          <figure class="text-image-block__media project-media project-media--video">
+          <figure class="text-image-block__media project-media project-media--video project-media--rounded">
             <iframe
               class="youtube-embed"
               data-video-id="L_wtn7QzY9o"
@@ -152,7 +148,7 @@
         <div class="project-copy">
           <p>Currently the SDK (V0.5) doesn't expose the capture button on the glasses. Starting/stopping streaming and capturing a photo can only be done via a GUI button on the app. This creates extra friction for the beginning and the end of the experience because users have to touch the phone before controlling the glasses. Once the Meta wearable SDK opens up for more hardware interactions, I will come back to improve the interaction and reduce the friction to use this agent.</p>
         </div>
-        <figure class="project-media project-media--opaque project-media--video project-media--after-copy">
+        <figure class="project-media project-media--opaque project-media--video project-media--after-copy project-media--rounded">
           <iframe
             class="youtube-embed"
             data-video-id="H8Iehch-T74"
@@ -180,6 +176,24 @@
               <span class="project-bookmark__description">A short article about the relationship model between users, OS, and agents on wearables.</span>
             </span>
           </a>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="takeaways-title">
+        <h2 id="takeaways-title" class="project-section__title">Takeaways</h2>
+        <div class="takeaway-card-grid">
+          <article class="takeaway-card">
+            <span class="takeaway-card__number" aria-hidden="true">01</span>
+            <p>Life logging is finally convenient with the help from wearables.</p>
+          </article>
+          <article class="takeaway-card">
+            <span class="takeaway-card__number" aria-hidden="true">02</span>
+            <p>Async logging creates a peace of mind.</p>
+          </article>
+          <article class="takeaway-card">
+            <span class="takeaway-card__number" aria-hidden="true">03</span>
+            <p>Multimodal interaction design reaches deep into the model pipeline.</p>
+          </article>
         </div>
       </section>
 
