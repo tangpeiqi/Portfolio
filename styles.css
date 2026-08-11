@@ -782,16 +782,21 @@ a.project-nav__item {
 
 .project-media--rounded {
   --media-corner-smoothing: 0.6;
+  position: relative;
+  isolation: isolate;
   border-radius: 16px;
   corner-shape: superellipse(var(--media-corner-smoothing));
   overflow: hidden;
   clip-path: inset(0 round 16px);
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 .project-media--rounded iframe {
   border-radius: inherit;
   corner-shape: inherit;
   clip-path: inset(0 round 16px);
+  transform: translateZ(0);
 }
 
 .project-media--hero {
