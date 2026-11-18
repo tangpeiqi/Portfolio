@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Living with Agents - Peiqi Tang</title>
+  <meta name="description" content="Reflections on living with personal AI agents: relationships, alignment, shared workspaces, and the interfaces that connect us.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700&family=Rock+Salt&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20261117">
+</head>
+<body id="top">
+  <header class="project-nav" aria-label="Portfolio navigation" data-current-project="Living with Agents">
+    <div class="project-nav__bar">
+      <a class="project-nav__brand" href="index.html">Peiqi&nbsp;&nbsp;Tang</a>
+      <div class="project-nav__crumb" aria-hidden="true">
+        <span class="project-nav__separator"></span>
+        <span class="project-nav__current">Living with Agents</span>
+      </div>
+      <button class="project-nav__toggle" type="button" aria-label="Open project menu" aria-expanded="false" aria-controls="project-menu">
+        <span class="project-nav__toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+    <nav id="project-menu" class="project-nav__menu" aria-label="Projects">
+      <a class="project-nav__item" href="gen-ui-on-watch.html">Gen Watch Face</a>
+      <a class="project-nav__item" href="babycare.html">BabyCare</a>
+      <span class="project-nav__item" aria-current="page">Living with Agents</span>
+      <a class="project-nav__item" href="os-for-agents.html">OS for Agents</a>
+      <a class="project-nav__item" href="project-at-meta.html">Projects at Meta</a>
+      <a class="project-nav__item" href="fireflies.html">Fireflies</a>
+      <a class="project-nav__item" href="amazon-lens.html">Amazon Lens</a>
+    </nav>
+  </header>
+
+  <main class="project-page project-page--personal-agents">
+    <div class="project-container">
+      <h1 class="project-title">Living with Agents</h1>
+      <p class="project-meta">Article · 2026 Q4</p>
+
+        <div class="project-copy project-section project-section--overview">
+          <p>A while ago, I wrote a short article about <a href="os-for-agents.html">OS for agents</a>. I talked about the mental model for managing agents and the mixed initiative interaction problem. What I didn’t realize was that there will be so many personal agents coming to the market in the later half of the year. After using some of the more popular agents for a while, I have some new perspectives on this subject matter.</p>
+        </div>
+
+      <section class="project-section" aria-labelledby="one-entity-or-team">
+        <h2 id="one-entity-or-team" class="project-section__title">One entity or a team?</h2>
+        <div class="project-copy">
+          <p>In my previous article I laid out the human-agent relationship on a spectrum based on the number of agents we will interact with, from one agent as the executive assistant, to a small council as your life coaches/mentors, to a marketplace of agents as your task based contractors.The current landscape of agents (as of late 2026) simplifies my spectrum into two polar:</p>
+          <p>One agent who does it all for you. Usually for your personal life.</p>
+          <ul>
+            <li>Pros: The entry point to the interaction is the simplest. You don’t need to think about which agent to talk to. This sounds small on paper but if you put it into the situation of interacting with the agent dozens of times per day, maybe most of them are on-the-go, it becomes a huge deal. If companies plan to put their agent on their wearables, the one agent mental model is almost a must.</li>
+            <li>Cons: All tasks and conversations are blended together in one chat window. The one-off asks are mixed with long back-and-forth deep discussion on a topic. If there is a particular response from the past you want to reference or examine again, it can be hard to dig it up from all the noises.</li>
+          </ul>
+          <p>Multiple agents who can work together to form a workflow, or separately to cover different aspects of work/life. Usually for your work, business or projects.</p>
+          <ul>
+            <li>Pros: Dedicated roles and responsibilities for each agent means your context and tasks are well categorized. You can also get second opinions if you ask for advice in a group chat.</li>
+            <li>Cons: this multi-agent model works great in a well defined work/project environment, but the ever-changing personal life cannot be as well defined. We need to handle miscellaneous stuff that is difficult to put a clear label on. Fencing our lives into separate territories and assigning an agent on each is just not very realistic. Try to do so and you will soon find yourself debating which agent to talk to, or creating more and more agents for the longtail cases, or both.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="mirror-or-hand">
+        <h2 id="mirror-or-hand" class="project-section__title">A mirror or a hand?</h2>
+        <div class="project-copy">
+          <p>At a very high level, we want two things from the AI agent:</p>
+          <ul>
+            <li>We wanted it to be a mirror, reflecting our context and data back to us in the form of insights and coaching advice, helping us understand ourselves deeper and overtime become a better version of ourselves.</li>
+            <li>We want it to be an extra hand, doing the tasks we were not capable of or too busy to do before.</li>
+          </ul>
+          <p>One AI agent can switch its role between mirror and hand for us from task to task, but it cannot be both in the same session. The hand listens to orders and prioritizes getting things done. The mirror questions what you throw at it and worries about you doing the wrong thing. Given a specific request, the two roles conflict with each other. The agent has to choose one  to play when responding back. Knowing which to pick based on the state of the conversation and available context is critical. It sets the tongue and the direction of how it should respond to us.</p>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="alignment">
+        <h2 id="alignment" class="project-section__title">Alignment (at personal level, not at humanity scale)</h2>
+        <div class="project-copy">
+          <p>Trust is a must and alignment is one of the cornerstones to build trust. Alignment should happen across altitude at 3 levels: memories, goals, tasks.</p>
+          <ul>
+            <li>Memories: high altitude, an understanding of the user based on accumulated context</li>
+            <li>Goals: mid altitude, description of a future state, what the user wants to achieve</li>
+            <li>Tasks: low altitude, a future action that the agent will take to help achieve a goal, more granular, specific</li>
+          </ul>
+        </div>
+        <figure class="project-media project-media--text personal-agents-alignment">
+          <img src="assets/Living with Personal Agents/Altitude of Alignment.png" width="1440" height="688" loading="lazy" alt="Three altitudes of alignment: memories, goals, and tasks, with overlapping personal, shared, and agent-owned workspaces at the task level.">
+        </figure>
+        <div class="project-copy project-copy--after-media">
+          <p>A full alignment requires users to be able to view and edit all 3 altitudes.</p>
+          <p>Because agents have longer term memories and can proactively follow tasks, a full alignment requires users to be able to view and edit all 3 altitudes so that users can have confidence the agents are working towards the right trajectory in the background.</p>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="shared-space">
+        <h2 id="shared-space" class="project-section__title">My space, their space or our space?</h2>
+        <div class="project-copy">
+          <p>At low altitude, where agents are doing the task on a computer, they could be doing it in 3 different kinds of space:</p>
+          <ul>
+            <li>Mine: I gave the agent access to my space but oftentimes I would like to keep an eye on what it does there and expect the agent to only touch and change things that I explicitly allow it to. Examples could be my calendar, my messages, my health data.</li>
+            <li>Theirs: The agents’ own VM. They have the most freedom to do things their way there. I might take a peak if I’m curious. But most of the time I leave them alone.</li>
+            <li>Ours: Me and my agents’ shared space. The agent can go and make changes at any time. And I can do the same too. But most importantly, this is the space we can edit together at the same time. Version history is probably a must.</li>
+          </ul>
+          <p>Connect the ownership of space with <a href="os-for-agents.html#attention-title" target="_blank" rel="noopener noreferrer">the quadrant diagram for attention and intent</a> from my earlier article, and we will get this table:</p>
+        </div>
+        <div class="project-table-wrap project-table-wrap--wide" role="region" aria-label="Workspace, work style, and human involvement" tabindex="0">
+          <table class="project-table">
+            <thead><tr><th scope="col">Workspace</th><th scope="col">Work Style</th><th scope="col">Human Involvement</th></tr></thead>
+            <tbody>
+              <tr><td>Agents working in my space</td><td>Supervise</td><td>High attention and low intent density</td></tr>
+              <tr><td>Agents working in their space</td><td>Delegate, Hand off,</td><td>Low attention and low intent density; Low attention and high intent density</td></tr>
+              <tr><td>Agents and I working together in a shared space</td><td>Collaborate</td><td>High attention and high intent density</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </section>
+
+      <section class="project-section" aria-labelledby="tangled-threads">
+        <h2 id="tangled-threads" class="project-section__title">Tangled threads</h2>
+        <div class="project-copy">
+          <p>All agents use the interface model of the messaging application. This model assumes equal importance on all messages, which means all the interactions are organized chronologically as chat bubbles. This creates two problems:</p>
+          <ul>
+            <li>One thread tangles everything together.</li>
+            <li>Long topics/tasks could be scattered across the timeline.</li>
+          </ul>
+          <p>If I forgot about something mentioned earlier, or want to reference a previous response, I will have to scroll through the long messy chat history. The experience is much worse than doing it in a human-to-human chat because agents tend to respond with long blocks of text. Sometimes I just ask the agent the same question again instead of searching in the history myself.</p>
+          <p>But if the intention is not to look back at the chat history, then why organize it like this in the first place?</p>
+          <p>It seems like a better way would be to organize past conversations into topics with widgets like summaries, progress trackers or action cards, etc.</p>
+        </div>
+      </section>
+
+      <section class="project-section" aria-labelledby="blank-canvas">
+        <h2 id="blank-canvas" class="project-section__title">Blank canvas</h2>
+        <div class="project-copy">
+          <p>“I’m not travelling and I don’t have subscriptions to cancel. What can an AI agent do for me?” When facing the empty text input box, people need inspiration to help them understand what kind of work they can hand over to the agent.</p>
+          <p>Currently, apps like Muse have a dedicated ideas tab to show users the breadth of work it can take on. Beyond that, discovery of agent use cases heavily relies on word of mouth, yet everyone’s life is different. In order for the agent to show what it can do for me specifically, not the hypothetical person in the commercial, it needs my context; but I don’t feel confident to give it access to my context without knowing what it will do on behalf of me. This is the dilemma of a deeply personalized, context dependent product like an AI agent.</p>
+          <p>What makes the situation worse, is that the types of work agents can do keeps expanding as the model and the architecture improves in the background, while the way we interface with it stays the same. So users won’t have any ideas of what becomes possible now that was not possible before by just looking at the interface.</p>
+          <p>These 2 problems combined, the dilemma of use case discovery, and the opacity of the ever changing capability boundary, makes the blank canvas on the agent interface harder to overcome.</p>
+        </div>
+      </section>
+
+      <a class="button back-to-top" href="#top">Back to top</a>
+    </div>
+  </main>
+  <script>
+    const projectNav = document.querySelector(".project-nav");
+    const navToggle = document.querySelector(".project-nav__toggle");
+    const projectTitle = document.querySelector(".project-title");
+
+    const syncProjectNav = () => {
+      if (!projectNav || !projectTitle) {
+        return;
+      }
+
+      projectNav.classList.toggle("project-nav--scrolled", projectTitle.getBoundingClientRect().bottom <= 0);
+    };
+
+    navToggle?.addEventListener("click", () => {
+      const isOpen = projectNav.classList.toggle("project-nav--open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Close project menu" : "Open project menu");
+    });
+
+    window.addEventListener("scroll", syncProjectNav, { passive: true });
+    window.addEventListener("resize", syncProjectNav);
+    syncProjectNav();
+  </script>
+</body>
+</html>

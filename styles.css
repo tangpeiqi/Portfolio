@@ -475,7 +475,8 @@ img {
 .project-nav__menu {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-template-rows: repeat(2, 64px);
+  grid-template-rows: repeat(3, 64px);
+  grid-auto-flow: column;
   width: 100%;
   max-width: 1200px;
   max-height: 0;
@@ -489,7 +490,7 @@ img {
 
 .project-nav:hover .project-nav__menu,
 .project-nav:focus-within .project-nav__menu {
-  max-height: 144px;
+  max-height: 208px;
   padding: 8px 0;
   opacity: 1;
   pointer-events: auto;
@@ -510,36 +511,6 @@ img {
 
 a.project-nav__item {
   cursor: pointer;
-}
-
-.project-nav__item:nth-child(1) {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-.project-nav__item:nth-child(2) {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.project-nav__item:nth-child(3) {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-.project-nav__item:nth-child(4) {
-  grid-column: 2;
-  grid-row: 2;
-}
-
-.project-nav__item:nth-child(5) {
-  grid-column: 3;
-  grid-row: 1;
-}
-
-.project-nav__item:nth-child(6) {
-  grid-column: 3;
-  grid-row: 2;
 }
 
 .project-nav__item:hover,
@@ -1026,6 +997,55 @@ a.project-nav__item {
   background: transparent;
 }
 
+.project-table-wrap--wide {
+  max-width: none;
+}
+
+.project-table-wrap--wide .project-table {
+  overflow-wrap: anywhere;
+}
+
+.project-table-wrap--wide th:nth-child(1) {
+  width: 32%;
+}
+
+.project-table-wrap--wide th:nth-child(2) {
+  width: 26%;
+}
+
+.project-table-wrap--wide th:nth-child(3) {
+  width: 42%;
+}
+
+@media (max-width: 767px) {
+  .project-table-wrap--wide .project-table {
+    table-layout: auto;
+    overflow-wrap: normal;
+    hyphens: auto;
+  }
+
+  .project-table-wrap--wide th:nth-child(n) {
+    width: auto;
+  }
+}
+
+.project-page--personal-agents .project-copy p,
+.project-page--personal-agents .project-copy ul {
+  margin-bottom: 24px;
+}
+
+.project-page--personal-agents .project-copy li + li {
+  margin-top: 8px;
+}
+
+.personal-agents-alignment {
+  width: 100%;
+}
+
+#attention-title {
+  scroll-margin-top: 88px;
+}
+
 .project-table th,
 .project-table td {
   padding: 10px 12px;
@@ -1187,13 +1207,13 @@ a.project-nav__item {
   .project-nav__menu {
     grid-auto-flow: column;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(3, 64px);
+    grid-template-rows: repeat(4, 64px);
     max-width: none;
     width: 100%;
   }
 
   .project-nav.project-nav--open .project-nav__menu {
-    max-height: 192px;
+    max-height: 256px;
     opacity: 1;
     pointer-events: auto;
   }
@@ -1277,10 +1297,12 @@ a.project-nav__item {
   }
 
   .project-nav.project-nav--open .project-nav__menu {
-    max-height: 384px;
+    max-height: calc(100dvh - 64px);
+    overflow-y: auto;
   }
 
   .project-nav__item {
+    flex-shrink: 0;
     width: 100%;
     padding-right: 16px;
     padding-left: 16px;
